@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/* header */
+.trip_main_hd_top_nav {
+	position: relative;
+	z-index: 2;
+}
+
+.main_hd_line {
+	border-bottom: 1px solid #ddd;
+}
+
+.main_hd {
+	position: relative;
+	padding: 0 12px;
+	line-height: 1.5;
+}
+
+.main_hd .main_hd_inner {
+	position: relative;
+	max-width: 1160px;
+	margin: 0 auto;
+}
+
+.trip_main_hd_logo {
+	float: left;
+	padding: 16px 24px 14px 0;
+}
+
+.trip {
+	background: url(/nadri/repository/img/main/main_hd_logo.jfif) no-repeat
+		100% 50%;
+	display: inline-block;
+	width: 136px;
+	height: 40px;
+	text-indent: -9999px;
+	background-size: 131px 34px;
+}
+
+.main_hd_account {
+	float: right;
+	padding: 15px 0 15px 10px;
+	margin-right: 16px;
+}
+
+.main_hd_dropdown {
+	position: relative;
+}
+
+.trip_main_hd_no_login {
+	padding: 15px 0;
+	margin-right: 0;
+}
+
+#loginBtn {
+	display: inline-block;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 38px;
+	line-height: 30px;
+	font-size: 15px;
+	border-radius: 5px;
+	padding: 3px 13px;
+	margin: 4px 3px;
+	border: 1px solid #287dfa;
+	cursor: pointer;
+	color: #287dfa;
+	background-color: #fff;
+}
+
+.loginWrite {
+	
+}
+
+.main_hd .trip_main_hd_nav {
+	float: left;
+	max-height: 62px;
+	overflow: visible;
+	line-height: 0px
+}
+
+/* 
+.modal-backdrop {
+	z-index: 0 !important;
+} */
+
+/* .main_hd:before, main_hd_line:before {
+	content: "";
+	display: table;
+}
+
+.main_hd:after, main_hd_line:after {
+	clear: both;
+	display: table;
+	content: "";
+} */

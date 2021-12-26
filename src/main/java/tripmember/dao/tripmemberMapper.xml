@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="tripmemberSQL">
+ 
+ 	<select id="login" parameterType="tripmember" resultType="tripmember">
+		select * from tripmember where id=#{id}
+	</select>	
+	
+ 	<select id="checkId" parameterType="String" resultType="tripmember">
+ 		select * from tripmember where id=#{id}
+ 	</select>
+ 	
+ 	<select id="checkNickName" parameterType="String" resultType="tripmember">
+ 		select * from tripmember where nickName=#{nickName}
+ 	</select>
+ 	
+	<select id="checkPostSearch" parameterType="java.util.Map" resultType="zipcode">
+		select * from newzipcode 
+		where sido like '%'||#{sido}||'%'
+		and nvl(sigungu,'0') like '%'||#{sigungu}||'%'
+		and roadname like '%'||#{roadname}||'%'
+		<!-- %#은 붙으면 안되므로 ||로 떼어놓는다 
+		nvl null값일경우 치환해주는 함수 실제 들어가는게 아님-->
+	</select> 	
+	
+ 	<insert id="write" parameterType="tripmember">
+		insert into tripmember values(member_seq.nextval,#{name}, #{id},#{nickName},#{pwd}
+								,#{tel}
+								,#{email}
+								,#{zipcode}, #{address}, #{addressDetail},#{profileImg}
+								, sysdate) 	
+	</insert>	
+	
+ 	<select id="getTripmemberInfo" parameterType="String" resultType="tripmember">
+ 		select * from tripmember where id=#{id}
+ 	</select>	 	 
+	
+<!-- 	
+ 	<select id="getUser" parameterType="String" resultType="member">
+ 		select * from member where id=#{id}
+ 	</select>
+ 	
+ 	 	
+ 	<select id="getUserList"  resultType="member">
+ 		select * from member
+ 	</select>
+ -->
+
+ 	<update id="modify" parameterType="tripmember">
+ 		update tripmember set   profileImg=#{profileImg}, pwd=#{pwd}, nickName=#{nickName}
+								,tel=#{tel} 
+								,email=#{email}
+								,zipcode=#{zipcode}, address=#{address}, addressDetail=#{addressDetail} 
+								 where id=#{id}
+ 	</update>
+ 	
+	 <update id="imgModify" parameterType="tripmember" >
+		update tripmember set profileImg=#{profileImg} where id=#{id}
+  	</update>	
+  	
+ 	<delete id="delete" parameterType="String">
+ 		delete tripmember where id=#{id}
+ 	</delete> 	
+ 	
+	
+ </mapper>
+ 
+ 

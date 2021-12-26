@@ -1,0 +1,612 @@
+@charset "UTF-8";
+
+a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
+	details, div, dl, dt, embed, fieldset, figcaption, figure, footer, form,
+	h1, h2, h3, h4, h5, h6, header, hgroup, html, iframe, img, label,
+	legend, li, mark, menu, nav, object, ol, output, p, ruby, section, span,
+	sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul,
+	video {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+input, textarea {
+	font-size: inherit;
+	color: inherit;
+	outline: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+button, input, optgroup, select, textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
+.travel_guide_root_class {
+	position: relative;
+	z-index: 1;
+}
+
+.TravelDetailContainer {
+	background-color: rgb(245, 247, 250);
+}
+
+#tripmoment {
+	max-width: 1160px;
+	margin: 0 auto;
+	padding: 0 32px;
+}
+
+/* header */
+.tripmoment_path {
+	padding: 0 1%;
+	display: flex;
+	justify-content: space-between;
+	width: 1174px;
+}
+
+.tripmomentPath {
+	margin-left: 10px;
+	margin-top: 1rem;
+	margin-bottom: 16px;
+	line-height: 32px;
+	color: rgb(38, 129, 255);
+	font-size: 14px;
+}
+
+.tripmomentPathItem {
+	display: inline-block;
+}
+
+.tripmomentPathItem:last-child>a {
+	color: black;
+}
+
+.tripmomentPathItem::after {
+	content: '>';
+}
+
+.tripmomentPathItem:last-child::after {
+	content: '';
+}
+
+.tripmomentPathItem a {
+	text-decoration: none;
+}
+
+.tripmomentSearch {
+	position: relative;
+	margin-left: 810px;
+	width: 350px;
+	height: 32px;
+	margin-top: 1rem;
+	border: 1px solid #e4e4e4;
+	border-radius: 2px;
+	margin-right: 10px;
+}
+
+.tripmomentSearch_input {
+	padding-right: 40px;
+	padding-left: 12px;
+	font-size: 14px;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+.tripmomentSearch_input>input {
+	text-overflow: ellipsis;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.tripmomentSearch_button {
+	width: 40px;
+	background: #fff;
+	top: 0;
+	right: 0;
+	position: absolute;
+	height: 100%;
+	border-radius: 0 4px 4px 0;
+}
+
+.tripmomentSearch_icon {
+	background: url("/nadri/repository/img/area/areaSearch.png") no-repeat
+		50%;
+	background-size: 17px 17px;
+	width: 100%;
+	height: 100%;
+}
+
+/* Tripmoment Image Carousel */
+.PhotoStyle {
+	width: 1144px;
+	position: relative;
+	margin-top: 8px;
+	flex-direction: row;
+	margin-bottom: 64px;
+	display: flex;
+	position: relative;
+	margin-top: 8px;
+	flex-direction: row;
+	margin-bottom: 64px;
+}
+
+}
+.imageGallery {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	height: 100%;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	width: 650px;
+	order: 1;
+}
+
+.carouselWrap {
+	width: 670px;
+	height: 100%;
+}
+
+.carousel-item .img-img {
+	z-index: -1;
+	position: relative;
+	margin-left: 0px;
+	width: 100% !important;
+	/* height: 100% !important; */
+	object-fit: fill !important;
+}
+
+.carousel-item img {
+	background-image: none ! important;
+}
+
+.carousel-item img {
+	position: absolute;
+	top: 6px;
+	left: 0px;
+	height: 630px;
+}
+
+.carousel-item .img-grey {
+	background: rgba(78, 78, 78, 0.75);
+	z-index: -1;
+	margin-left: 0px;
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: fill !important;
+}
+
+.carousel-item img {
+	/* height: 100%; */
+	object-fit: contain !important;
+	background: rgba(78, 78, 78, 0.75);
+}
+
+#container-pop {
+	height: 150px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.row-cols-4 {
+	overflow: hidden;
+	height: 100%;
+}
+
+.row-cols-4>img {
+	justify-content: space-between;
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+	height: 100%;
+	width: 25%;
+	object-fit: cover;
+	border: 7px solid rgb(15, 41, 77, 0.7);
+}
+
+#row-cols-4-pop>.col:hover {
+	border: 5px solid #2979ff;;
+}
+
+/* BoxRight */
+.BoxRight {
+	position: relative;
+	flex: 1 1 0%;
+	order: 2;
+	z-index: 0;
+}
+
+.trip_User {
+	line-height: 24px;
+	margin-left: 28px;
+	margin-top: 27px;
+	margin-bottom: 10px;
+	clear: both;
+	overflow: hidden;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: start;
+	justify-content: flex-start;
+	display: flex;
+	flex-direction: row;
+}
+
+.trip_User .trip_container {
+	width: 48px;
+	height: 50px;
+	position: relative;
+	margin-right: 4px;
+}
+
+/* scroll_content */
+.BoxRight .scroll_content {
+	overflow: scroll;
+	height: auto;
+	max-height: 731px;
+}
+
+.scroll_content::-webkit-scrollbar {
+	display: none;
+}
+
+.article_title {
+	font-size: 18px;
+	color: rgb(15, 41, 77);
+	font-weight: bold;
+	margin-left: 32px;
+	margin-right: 32px;
+	margin-top: 12px;
+	margin-right: 32px;
+}
+
+.article_content {
+	margin: 10px 32px 14px;
+}
+
+.article_content::-webkit-scrollbar {
+	display: none;
+}
+
+.BoxRight .content_collapse {
+	font-size: 16px;
+	line-height: 24px;
+	-webkit-line-clamp: 15;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.svg:not(:root) {
+	overflow: hidden;
+}
+
+.BoxRight .time {
+	font-size: 12px;
+	color: rgb(133, 146, 166);
+	margin-top: 14px;
+	margin-bottom: 24px;
+	margin-left: 32px;
+}
+
+.BoxRight .vote_list {
+	margin-left: 32px;
+	display: flex;
+	flex-direction: row;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: start;
+	justify-content: flex-start;
+	height: 68px;
+	overflow: hidden;
+}
+
+.BoxRight .vote_head_container {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	margin: 0px 8px 0px 0px;
+	overflow: hidden;
+	background: rgb(218, 223, 230);
+}
+
+.BoxRight .vote_text {
+	margin-left: 8px;
+	font-size: 15px;
+	color: rgb(133, 146, 166);
+	line-height: 22px;
+}
+
+/* 댓글 부착되는 부분 */
+.comment_container {
+	width: 100% !important;
+	border-top: 1px solid rgb(234, 234, 234) !important;
+	box-sizing: border-box !important;
+	padding-left: 32px !important;
+	padding-right: 32px !important;
+}
+
+.scroll_comment {
+	position: relative;
+	width: 100% !important;
+	border-top: 1px solid rgb(234, 234, 234) !important;
+	box-sizing: border-box !important;
+	padding-left: 32px !important;
+	padding-right: 32px !important;
+}
+
+.scroll_comment .user {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: row;
+	-webkit-box-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.scroll_comment .bi-person-circle {
+	flex-shrink: 0;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 8px;
+	background-color: rgb(245, 247, 250);
+}
+
+.scroll_comment .user_nickname {
+	line-height: 24px;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(15, 41, 77);
+}
+
+.scroll_comment .content {
+	margin: 0px 0px 0px 36px;
+	line-height: 24px;
+	font-size: 16px;
+	font-family: ArialMT;
+	color: rgb(15, 41, 77);
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+	word-break: break-all;
+}
+
+.scroll_comment .footer {
+	margin-left: 36px;
+	margin-top: 8px;
+	margin-right: 0px;
+	line-height: 16px;
+	font-size: 12px;
+	font-family: ArialMT;
+	color: rgb(133, 146, 166);
+	display: flex;
+	flex-direction: row;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.post_time {
+	line-height: 16px;
+	font-size: 12px;
+	font-family: ArialMT;
+	color: rgb(133, 146, 166);
+}
+
+.devider {
+	height: 1px;
+	width: calc(100% - 0px);
+	background-color: rgb(218, 223, 230);
+	position: absolute;
+	bottom: 0px;
+}
+
+/* 좋아요 & 댓글 달기 */
+.input_view {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-color: white;
+	padding: 12px 32px 12px 16px;
+	box-shadow: 0 0 8px 0 rgb(53 58 64/ 19%);
+}
+
+.input_phaise_container.like {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-right: 16px;
+}
+
+.textarea_container {
+	-webkit-flex: 10;
+	-ms-flex: 10;
+	flex: 10;
+	color: #0f294d;
+	padding: 0px 16px;
+	border: 1px solid #dadfe6;
+	border-radius: 4px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.textarea_2.like {
+	margin: 16px 0px;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	max-width: 305px;
+	min-height: 22px;
+	max-height: 92px;
+	line-height: 22px;
+	overflow: scroll;
+}
+
+.textarea_2::-webkit-scrollbar {
+	display: none;
+}
+
+.textarea_2[placeholder].like:empty.like::before {
+	content: attr(placeholder);
+	color: #8592a6;
+}
+
+.submit.like {
+	margin-left: 16px;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+	color: rgb(40, 125, 250);
+}
+
+.travel-photo-title {
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+.tripphoto {
+	height: 1360px;
+}
+
+.tripphoto .item {
+	width: 25%;
+	padding: 0px 10px 20px;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.tripphoto .content {
+	cursor: pointer;
+	padding: 0px 0px 12px;
+	border: 1px solid rgb(228, 228, 228);
+	box-shadow: rgb(255, 255, 255) 0px 4px 12px 0px;
+}
+
+.tripphoto .img-tripmoment {
+	position: relative;
+	min-height: 60px;
+	max-height: 348px;
+	overflow: hidden;
+}
+
+a, a:hover {
+	outline: none;
+	text-decoration: none;
+}
+
+.tripphoto .img {
+	width: 100%;
+	display: block;
+}
+
+.tripphoto .text {
+	padding: 12px 12px 0px;
+}
+
+.tripphoto .text a {
+	line-height: 24px;
+	max-height: 96px;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.tripphoto .item-title {
+	font-size: 14px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+a {
+	-webkit-transition: background-color .5s ease 0s, color .5s ease 0s,
+		width .5s ease 0s, border-width .5s ease 0s, border-color .5s ease 0s;
+}
+
+.tripphoto .user {
+	line-height: 30px;
+	height: 30px;
+	margin-top: 3px;
+	position: relative;
+}
+
+.ellipsis {
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+	word-wrap: break-word; /* 다음 줄로 넘어감 */
+	word-break: break-all; /* 단어의 중간에도 줄 바꿈 O */
+	white-space: nowrap; /* 줄바꿈 X */
+}
+
+.ellipsis::-webkit-scrollbar {
+	display: none;
+}
+
+.text svg {
+	position: absolute;
+	left: 2px;
+	top: 3px;
+	background: rgb(235, 235, 242);
+}
+
+.tripphoto .nickname-t {
+	margin-left: 8px;
+	overflow: hidden;
+}

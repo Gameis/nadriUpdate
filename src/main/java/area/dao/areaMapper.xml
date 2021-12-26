@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="areaSQL">
+	<insert id="imgPopWrite" parameterType="img">
+		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, #{content_seq}, pop_seq.currval, #{main_seq}, #{mainImg})
+	</insert>
+	
+	<insert id="imgActivityWrite" parameterType="img">
+		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, #{content_seq}, activity_seq.currval, #{main_seq}, #{mainImg})
+	</insert>
+	
+	<insert id="imgHotelWrite" parameterType="img">
+		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, #{content_seq}, hotel_seq.currval, #{main_seq}, #{mainImg})
+	</insert>
+	
+	<insert id="popWrite" parameterType="tripPop">
+		insert into tripPop values(pop_seq.nextval, #{pop_name}, #{pop_businessTime}, #{pop_tourismTime}, #{pop_call}, #{main_seq}, #{detailInfo})
+	</insert>
+	
+	<insert id="popMap" parameterType="tripPopMap">
+		insert into tripPopMap values(pop_seq.currval, #{address_name}, #{map_x}, #{map_y})
+	</insert>
+	
+	<select id="printPopMain" parameterType="String" resultType="popMain">
+		select pop_seq, pop_name, pop_businesstime, pop_tourismtime, pop_call, "pop_review_score", "pop_review_count", main_seq, img_name, img_path
+		from trippop
+        left join (select pop_seq, trunc(avg(pop_review_score), 1) as "pop_review_score"
+		      from trippop_review
+		      group by pop_seq) using(pop_seq)
+		join (select img_name, img_path, seq
+		      from img 
+		      where content_seq = 3 and main_seq = #{main_seq} and mainImg = 'T') on(pop_seq = seq)
+		left join (select pop_seq, count(*) as "pop_review_count"
+		      from trippop_review
+		      group by pop_seq) using(pop_seq)
+		where main_seq = #{main_seq}
+	</select>
+	
+	<insert id="activityWrite" parameterType="tripActivity">
+		insert into tripActivity values(activity_seq.nextval, 
+										#{activity_name}, 
+										#{activity_point}, 
+										#{activity_price}, 
+										#{activity_option},
+										#{activity_validDate},
+										#{activity_inclusion},
+										#{activity_refund},
+										#{activity_used},
+										#{activity_information},
+										#{activity_warning},
+										#{activity_saleRate}, 
+										#{main_seq})
+	</insert>
+	
+	<insert id="hotelWrite" parameterType="tripHotel">
+		insert into tripHotel values(hotel_seq.nextval, 
+									 #{hotel_name}, 
+									 #{hotel_address}, 
+									 #{hotel_year}, 
+									 #{hotel_remodeling}, 
+									 #{hotel_room}, 
+									 #{hotel_info}, 
+									 #{hotel_clean}, 
+									 #{hotel_facility}, 
+									 #{hotel_location}, 
+									 #{hotel_service}, 
+									 #{main_seq})
+	</insert>
+	
+	
+	
+	<select id="printActivityMain" parameterType="String" resultType="activityMain">
+		select activity_seq, activity_name, activity_salerate, activity_price * ((100 - activity_salerate)/100) as price, img_name, img_path
+		from tripactivity
+		join (select img_name, img_path, seq
+      		  from img
+      		  where content_seq = 5 and main_seq = #{main_seq} and mainImg = 'T') on(activity_seq = seq)
+	</select>
+	
+	<select id="onArea" parameterType="String" resultType="onArea">
+		select tripmain.main_seq as "main_seq", main_name, main_info, img_name, img_path, mainimg
+		from tripmain
+		join img on(tripmain.main_seq = seq)
+		where content_seq = 2 and tripmain.main_seq = #{main_seq}
+	</select>
+	
+	<select id="searchArea" parameterType="String" resultType="String">
+		select main_seq from tripmain where main_name = #{searchText}
+	</select>
+	
+	<select id="searchPop" parameterType="String" resultType="String">
+		select pop_seq from trippop where pop_name = #{searchText}
+	</select>
+
+	<select id="searchActivity" parameterType="String" resultType="String">
+		select activity_seq from tripactivity where activity_name = #{searchText}
+	</select>
+	
+	<select id="onAreaHotel" parameterType="String" resultType="hotelMain">
+		select hotel_seq, 
+		       hotel_name, 
+		       hotel_address, 
+		       hotel_year, 
+		       hotel_remodeling, 
+		       hotel_room, 
+		       hotel_info, 
+		       hotel_clean, 
+		       hotel_facility, 
+		       hotel_location, 
+		       hotel_service, 
+		       triphotel.main_seq as "main_seq", 
+		       img_name, 
+		       img_path
+		from triphotel
+		join img on(hotel_seq = seq)
+		where content_seq = 4 and triphotel.main_seq = #{main_seq}
+	</select>
+</mapper>

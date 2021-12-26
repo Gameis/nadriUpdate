@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tripmomentSQL">
+	<select id="getPop_seq" parameterType="String"
+		resultType="tripPop">
+		select * from trippop where pop_name = #{pop_name}
+	</select>
+
+	<insert id="tripmoment_write" parameterType="tripmoment">
+		insert into
+		tripmoment values(moment_seq.nextval,
+						#{moment_title},
+						#{moment_content},
+						  sysdate,
+						#{member_seq},
+						#{pop_name}
+		)
+	</insert>
+
+	<insert id="getTripmomentImg" parameterType="img">
+		insert into Img values(img_seq.nextval,
+							 #{img_name},
+							 #{img_path},
+							 '8',
+							 moment_seq.currval, 
+							 #{main_seq}, 
+							 #{mainImg}
+							 )
+	</insert>
+
+	<select id="onTripmoment" resultType="mainTripmoment">
+		select moment_seq, moment_content, img_path, img_name, nickname
+		from tripmoment
+		join img 
+		on(seq = moment_seq)
+        join tripmember
+        using(member_seq)
+		where mainimg = 'T' and content_seq = 8
+	</select>
+	
+	
+	<select id="getTripImg" resultType="tripImg" parameterType="String">
+		select * from img
+		where seq = #{seq} and content_seq = 8
+	</select>
+
+	<select id="getTripView" resultType="tripView" parameterType="String">
+		select * from tripmoment
+		join tripmember using (member_seq) where moment_seq = #{moment_seq}
+	</select>
+	
+	<select id="onReTripmoment" resultType="mainTripmoment" parameterType="String">
+		select moment_seq, moment_content, img_path, img_name, nickname
+		from tripmoment
+		join img 
+		on(seq = moment_seq)
+		join tripmember using (member_seq)
+        where mainimg = 'T' and content_seq = 8 
+        and pop_name = (select pop_name
+                        from tripmoment
+                        where moment_seq = #{moment_seq})
+	</select>
+
+</mapper>

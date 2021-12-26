@@ -1,0 +1,284 @@
+@charset "UTF-8";
+
+a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
+	details, div, dl, dt, embed, fieldset, figcaption, figure, footer, form,
+	h1, h2, h3, h4, h5, h6, header, hgroup, html, iframe, img, label,
+	legend, li, mark, menu, nav, object, ol, output, p, ruby, section, span,
+	sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul,
+	video {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+ul, li {
+	list-style: none;
+}
+
+.main_footer, ul {
+	margin: 0;
+	list-style: none;
+}
+
+.main_footer, .trip_main_footer_line {
+	background-color: #fff;
+	padding-bottom: 35px;
+	font-family: arial, sans-serif;
+	font-size: 14px;
+	color: #0f294d;
+}
+
+.main_footer .trip_main_footer_inner {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.main_footer .trip_main_footer_inner {
+	width: 1180px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main_footer_cnt, .main_footer_cnt .main_footer_links {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+
+.main_footer_cnt {
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	border-top: 1px solid #e4e4e4;
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+.trip_main_foot_clearfix:after, .trip_main_foot_clearfix:before {
+	content: "";
+	display: table;
+}
+
+.main_footer_cnt .main_footer_links .main_footer_block { /* 동일 적용 */
+	width: 153px;
+}
+
+.main_footer_block .main_footer_block-title { /* 동일 적용 */
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.foot_clearfix_list_1 {
+	font-size: 14px;
+}
+
+.main_footer_list_item {
+	margin-bottom: 2px;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.main_footer_list_item a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a, a:hover {
+	outline: none;
+	text-decoration: none;
+}
+
+.foot_clearfix_icon {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-top: 8px;
+}
+
+.foot_clearfix_icon-item {
+	float: left;
+}
+
+.main_footer_block .foot_clearfix_icon-item a {
+	height: 24px;
+	width: 24px;
+	display: inline-block;
+}
+
+a, a:hover {
+	outline: none;
+	text-decoration: none;
+}
+
+.foot_clearfix_icon-item a>img {
+	display: inline-block;
+	line-height: 1;
+	width: 25px;
+	height: 25px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	margin: 6px;
+	height: 25px;
+}
+
+.main_footer_block .foot_clearfix_icon-item+.foot_clearfix_icon-item {
+	margin-left: 10px;
+}
+
+/* payment */
+.main_footer_cnt .main_footer_others {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 256px;
+}
+
+.main_footer_cnt>.main_footer_others>.trip_main_foot_clearfix_payment {
+	width: 256px;
+}
+
+.main_footer_cnt>.main_footer_others>.trip_main_foot_clearfix_payment .payment_title
+	{
+	font-size: 12px;
+	line-height: 14px;
+	color: #8592a6;
+	margin-bottom: 7px;
+}
+
+.main_footer_cnt>.main_footer_others>.trip_main_foot_clearfix_payment .payment_list
+	{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon.naver-pay {
+	background-position: 0 -48px;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon.bc-card {
+	background-position: -72px -96px;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon.shinhan {
+	background-position: -36px -72px;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon.kakao-pay {
+	background-position: -108px -24px;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon.samsung {
+	background-position: -36px -48px;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon.nh {
+	background-position: 0 -120px;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon.keb {
+	background-position: -72px -72px;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon.samsung-pay
+	{
+	background-position: -72px -48px;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon.hyundai-pay
+	{
+	background-position: -108px -96px;
+}
+
+.trip_main_foot_clearfix_payment .payment_list .payment_icon {
+	display: inline-block;
+	width: 36px;
+	height: 24px;
+	margin-right: 8px;
+	margin-bottom: 5px;
+	background-image: url(/nadri/repository/img/main/payment.png);
+	background-repeat: no-repeat;
+	background-size: 500%;
+	background-position: 36px 24px;
+}
+
+/* 제휴사 */
+.main_footer_partner {
+	width: 256px;
+}
+
+.main_footer_cnt .main_footer_others>div+div {
+	margin-top: 20px;
+}
+
+.main_footer_partner-title {
+	font-size: 12px;
+	line-height: 14px;
+	color: #8592a6;
+	margin-bottom: 7px;
+}
+
+.main_footer_partner-body {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.main_footer_partner-item {
+	margin-right: 25px;
+}
+
+.main_footer_partner-logo {
+	height: 16px;
+}
+
+/* Awards */
+.foot_awards_body {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+}
+
+.foot_awards_items {
+	display: inline-block;
+	margin: auto;
+}
+
+.foot_awards_items img {
+	vertical-align: middle;
+}
+
+.foot_awards_text {
+	display: inline-block;
+    text-align: left;
+    max-width: 180px;
+    padding-left: 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	vertical-align: middle;
+	font-size: 12px;
+}
+
+.trip_main_foot_rights {
+	text-align: center;;
+}

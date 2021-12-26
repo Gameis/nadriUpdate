@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mainSQL">
+	<insert id="mainWrite" parameterType="tripMain">
+		insert into tripmain values(main_seq.nextval, #{main_name}, #{main_info})
+	</insert>
+
+	<insert id="mainImgWrite" parameterType="img">
+		insert into img values(img_seq.nextval, #{img_name}, #{img_path},
+		#{content_seq}, main_seq.currval, main_seq.currval, #{mainImg})
+	</insert>
+
+	<select id="mainImgPrint" resultType="tripMainImg" parameterType="tripMainImg">
+		select img_name, img_path, a.main_seq, main_name 
+		from img
+		join (select main_seq, main_name
+		from tripmain)a on(a.main_seq = seq)
+		where content_seq = 1
+	</select>
+</mapper>

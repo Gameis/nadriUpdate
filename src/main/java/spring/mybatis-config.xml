@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+<configuration>
+	<typeAliases>
+	
+		<typeAlias type="main.bean.TripMainDTO" alias="tripMain"/>
+		<typeAlias type="main.bean.TripMainImgDTO" alias="tripMainImg"/>
+		
+		<typeAlias type="pop.bean.TripPopReviewDTO" alias="popReview"/>
+		<typeAlias type="pop.bean.TripPopLocationDTO" alias="popLocation"/>
+		<typeAlias type="pop.bean.TripPopImgDTO" alias="popImg"/>
+		<typeAlias type="pop.bean.TripPopCountDTO" alias="popCount"/>
+		<typeAlias type="pop.bean.TripPopReviewContentDTO" alias="popContent"/>
+		<typeAlias type="pop.bean.TripPopReviewImgDTO" alias="popContentImg"/>
+		<typeAlias type="pop.bean.TripPopReviewSearchDTO" alias="popSearch"/>
+		<typeAlias type="pop.bean.TripPopUserInfoDTO" alias="popUser"/>
+		
+		<typeAlias type="area.bean.OnAreaDTO" alias="onArea"/>
+		<typeAlias type="area.bean.ImgDTO" alias="img"/>
+		<typeAlias type="area.bean.TripPopDTO" alias="tripPop"/>
+		<typeAlias type="area.bean.TripPopMapDTO" alias="tripPopMap"/>
+		<typeAlias type="area.bean.TripActivityDTO" alias="tripActivity"/>
+		<typeAlias type="area.bean.TripHotelDTO" alias="tripHotel"/>
+		<typeAlias type="area.bean.HotelMainDTO" alias="hotelMain"/>
+
+ 		<typeAlias type="tripmember.bean.TripmemberDTO" alias="tripmember"/>
+		<typeAlias type="tripmember.bean.ZipcodeDTO" alias="zipcode"/>		
+<!-- 		<typeAlias type="tripmember.bean.TripmemberImageDTO" alias="tripmemberImg"/>		
+ -->		
+		<typeAlias type="area.bean.PopMainDTO" alias="popMain"/>
+		<typeAlias type="area.bean.ActivityMainDTO" alias="activityMain"/>
+		
+		<typeAlias type="tripmoment.bean.TripmomentDTO" alias="tripmoment"/>
+		<typeAlias type="tripmoment.bean.MainTripmomentDTO" alias="mainTripmoment"/>
+		<typeAlias type="tripmoment.bean.TripImgDTO" alias="tripImg"/>
+		<typeAlias type="tripmoment.bean.TripViewDTO" alias="tripView"/>
+		<typeAlias type="tripmoment.bean.TripmomentCommentDTO" alias="tripmomentComment"/>
+
+		<typeAlias type="activities.bean.OnActivitiesDTO" alias="onActivities"/>		
+		<typeAlias type="activities.bean.TripActReviewDTO" alias="actReview"/>
+		<typeAlias type="activities.bean.TripActReviewCntDTO" alias="actReviewCnt"/>
+		<typeAlias type="activities.bean.TripActReviewUserDTO" alias="actUserInfo"/>
+		<typeAlias type="activities.bean.TripActReviewListDTO" alias="actReviewList"/>
+
+	</typeAliases>
+	
+</configuration>

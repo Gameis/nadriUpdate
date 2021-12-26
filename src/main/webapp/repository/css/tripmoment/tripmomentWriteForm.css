@@ -1,0 +1,354 @@
+@charset "UTF-8";
+
+a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
+	details, div, dl, dt, embed, fieldset, figcaption, figure, footer, form,
+	h1, h2, h3, h4, h5, h6, header, hgroup, html, iframe, img, label,
+	legend, li, mark, menu, nav, object, ol, output, p, ruby, section, span,
+	sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul,
+	video {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+.trip_common_head_con {
+	position: relative;
+	z-index: 2;
+}
+
+.travel_guide_root_class {
+	position: relative;
+	z-index: 1;
+}
+
+.PublishMainContainer {
+	max-width: 1200px;
+	margin: 0px auto;
+	padding: 0px 30px;
+}
+
+.PublishCenterContainer {
+	padding: 0px 10px;
+}
+
+.PublishCenterContainer .title {
+	font-family: arial, sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	color: rgb(51, 51, 51);
+	line-height: 40px;
+}
+
+.PublishCenterContainer .tripmt {
+	margin-top: 24px;
+}
+
+.PublishCenterContainer .publish-title {
+	font-size: 18px;
+	line-height: 22px;
+	font-family: arial, sans-serif;
+	color: rgb(0, 0, 0);
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.PublishCenterContainer .sub-title {
+	margin-top: 8px;
+	font-size: 14px;
+	color: rgb(153, 153, 153);
+	line-height: 16px;
+	margin-bottom: 16px;
+}
+
+.PublishImageContainer #att_zone {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#moment_content {
+	width: 1100px;
+    height: 230px;
+}
+
+#att_zone{
+	width: 830px;
+	min-height:150px;
+	padding:10px;
+}
+#att_zone:empty:before{
+	content : attr(data-placeholder);
+	color : #999;
+	font-size:.9em;
+}
+
+.PublishImageContainer .li {
+	position: relative;
+	overflow: hidden;
+	width: 131px;
+	height: 131px;
+}
+
+.PublishImageContainer .h5 {
+	display: none;
+}
+
+.PublishImageContainer .add {
+	display: flex;
+	background: rgb(255, 255, 255);
+	text-align: center;
+	cursor: pointer;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	border: 2px dashed rgb(218, 223, 230);
+}
+
+.PublishImageContainer .cell {
+	display: table-cell;
+	vertical-align: middle;
+	width: 158px;
+}
+
+.icon-upload {
+	width: 46px;
+	height: 38px;
+	margin: 0px auto;
+}
+
+.icon-upload svg {
+	width: 100%;
+	height: 100%;
+}
+
+.PublishImageContainer .current-total {
+	margin-top: 16px;
+	font-size: 16px;
+	color: rgb(204, 204, 204);
+	text-align: center;
+	line-height: 16px;
+}
+
+input, textarea {
+	font-size: inherit;
+	color: inherit;
+	outline: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+button, input {
+	overflow: visible;
+}
+
+.PublishCenterContainer .publish-title {
+	font-size: 18px;
+	line-height: 22px;
+	font-family: arial, sans-serif;
+	color: rgb(0, 0, 0);
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	margin-top: 24px;
+}
+
+/* 사진 유효성 검사 */
+.PublishImageContainer .image-warn-h5 {
+	margin: -16px 0px 16px -16px;
+	background: rgb(254, 238, 236);
+	height: 34px;
+	font-size: 13px;
+	color: rgb(238, 59, 40);
+	line-height: 34px;
+	width: 100%;
+	padding: 0px 16px;
+	display: none;
+}
+
+/* 이미지 유효성 검사 2 */
+.PublishImageContainer .image-warn {
+	font-size: 14px;
+	color: rgb(238, 59, 40);
+	line-height: 18px;
+	margin-top: 8px;
+	margin-left: 10px;
+	display: none;
+}
+
+.PublishTitleContainer .title-warn {
+	font-size: 14px;
+	color: rgb(238, 59, 40);
+	line-height: 18px;
+	margin-top: 8px;
+	margin-left: 10px;
+	display: none;
+}
+
+.PublishContentContainer .content-warn {
+	font-size: 14px;
+	color: rgb(238, 59, 40);
+	line-height: 18px;
+	margin-top: 8px;
+	margin-left: 10px;
+	display: none;
+}
+
+.PublishLocationContainer .location-warn {
+	font-size: 14px;
+	color: rgb(238, 59, 40);
+	line-height: 18px;
+	margin-top: 8px;
+	margin-left: 10px;
+	display: none;
+}
+
+.PublicPrivacyContainer .privacy-unagree-tips {
+	margin-top: 10px;
+    font-size: 14px;
+    color: rgb(238, 59, 40);
+    line-height: 18px;
+    display: none;
+}
+
+/* 유효성검사 끝 */
+
+
+.PublishCenterContainer .supplement {
+	display: inline-block;
+	margin-left: 5px;
+	color: rgb(206, 206, 206);
+}
+
+.PublishTitleContainer input {
+	width: 100%;
+	height: 20px;
+	padding: 8px 0px;
+	border-bottom: 0.5px solid rgb(206, 210, 218);
+}
+
+.PublishContentContainer .input {
+	position: relative;
+	margin-top: 10px;
+	padding: 8px 8px 26px;
+	width: 100%;
+	height: 262px;
+	box-sizing: border-box;
+	border: 1px solid rgb(229, 229, 229);
+}
+
+.PublishContentContainer .textarea {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+[contenteditable='true']:empty:before {
+	content: attr(placeholder);
+	display: block;
+	color: #ced2d9;
+}
+
+.PublishContentContainer .tipsView {
+	position: absolute;
+	right: 8px;
+	bottom: 8px;
+	display: flex;
+	flex-flow: row wrap;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: end;
+	justify-content: flex-end;
+	cursor: pointer;
+}
+
+.PublishContentContainer .tipsContent {
+	color: rgb(133, 146, 166);
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.PublishContentContainer .tipsReword {
+	color: rgb(40, 125, 250);
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.PublishLocationContainer .location-view-for-online {
+	display: block;
+}
+
+.PublishLocationContainer .location-input {
+	width: 282px;
+	height: 40px;
+	position: relative;
+}
+
+.PublishLocationContainer .input-tips-left {
+	position: absolute;
+	bottom: -20px;
+	left: 0px;
+	font-size: 14px;
+	color: rgb(238, 59, 40);
+	line-height: 18px;
+	display: none;
+}
+
+.PublishLocationContainer .input-tips-right {
+	position: absolute;
+	color: rgb(238, 59, 40);
+	bottom: -22px;
+	right: 0px;
+	display: none;
+}
+
+.PublishLocationContainer input {
+	width: 100%;
+	height: 20px;
+	padding: 8px 0px;
+	border-bottom: 0.5px solid rgb(206, 210, 218);
+}
+
+.PublishCenterContainer .tripmt-pv {
+	margin-top: 30px;
+}
+
+.PublicPrivacyContainer .checkbox {
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.PublicPrivacyContainer .checkbox-icon {
+	width: 22px;
+	height: 22px;
+	margin-right: 8px;
+}
+
+.PublicPrivacyContainer .privacy-text {
+	font-size: 14px;
+	color: rgb(204, 204, 204);
+	line-height: 18px;
+	cursor: pointer;
+}
+
+.PublicPrivacyContainer .protocol {
+	color: rgb(68, 138, 255);
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.PublishSubmitContainer .submit {
+	width: 231px;
+	height: 57px;
+	cursor: pointer;
+	line-height: 57px;
+	text-align: center;
+	background: rgb(38, 129, 255);
+	font-size: 22px;
+	font-weight: 700;
+	color: rgb(255, 255, 255);
+	border-radius: 6px;
+	margin-bottom: 35px;
+}

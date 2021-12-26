@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="activitiesSQL">
+ 	<select id="onActivities" parameterType="String" resultType="onActivities">
+ 		select * from tripactivity 
+		cross join (select img_name as "main_img" from img where content_seq = '5' and seq = #{activity_seq} and mainimg = 'T')
+		cross join (select img_name as "sub_img" from img where content_seq = '5' and seq = #{activity_seq} and mainimg = 'F')
+		where activity_seq = #{activity_seq}
+ 	</select>
+ 	
+ 	<insert id="actReviewWrite" parameterType="actReview">
+ 		insert into tripactivity_review values(#{member_seq}, #{activity_review_content}, activity_review_seq.nextval, #{activity_review_score}, sysdate, #{activity_seq}, #{main_seq})
+ 	</insert>
+ 	
+ 	<select id="getActReviewCnt" parameterType="String" resultType="actReviewCnt">
+ 		select
+		nvl(count(activity_review_seq),0) as total_cnt_act_review,
+		round(nvl(avg(activity_review_score),0),1) as total_avg_act_review
+		from
+		tripactivity_review
+		where activity_seq=#{activity_seq}
+ 	</select>
+ 	
+ 	<select id="getActReviewUserInfo" parameterType="actUserInfo" resultType="actUserInfo">
+ 		select 
+		tripmember.nickname,
+		tripmember.profileimg
+		from
+		tripmember
+		where member_seq = #{member_seq}
+ 	</select>
+ 		
+ 	<select id="getReviewContentCnt" parameterType="String" resultType="int">
+ 		select nvl(count(activity_review_seq),0) as total_cnt_act_review
+		from tripactivity_review
+		where activity_seq = #{activity_seq}
+ 	</select>
+ 	
+ 	<select id="getReviewContent" parameterType="Map" resultType="actReviewList">
+ 		select 
+			tripactivity_review.activity_review_seq,
+			tripmember.nickname,
+			tripmember.profileimg,
+			tripactivity_review.activity_review_score,
+			to_char(tripactivity_review.activity_review_logtime, 'YYYY"년"MM"월"DD"일"') as activity_review_logtime,
+			tripactivity_review.activity_review_content
+		from tripactivity_review, tripmember
+		where tripactivity_review.member_seq = tripmember.member_seq
+		and tripactivity_review.activity_seq = #{activity_seq}
+		order by tripactivity_review.activity_review_seq desc
+		offset (#{pageNum}-1) * 5 row
+		fetch next 5 row only
+ 	</select>
+ </mapper>

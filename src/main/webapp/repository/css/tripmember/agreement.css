@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+*{margin: 0;padding: 0;box-sizing: border-box;} /* 내부가 아닌 전체 크기기준으로 잡기  */
+body.agreement{background-color: #f7f7f7;}	/* 흰회색 */
+ul>li{list-style: none} /* 리스트 스타일 앞에 점찍는거 없애라 */
+a{text-decoration: none;}	/* 글자줄에 어떤것도 주지마라 밑줄이나 가운데 긋기같은거 */
+.clearfix::after{content: "";display: block;clear: both;}	/* 오른쪽 왼쪽 취소  */
+
+#agreeForm{width: 460px;margin: 0 auto;}
+ul.agree_box{border: 1px solid #ddd;background-color: #fff;}	/*#ddd 회색 #fff 흰색*/
+
+.checkbox{font-weight: 400;}
+.checkBox{position: relative;}
+.checkBox>ul{position: relative;}
+.checkBox>ul>li{float: left;}
+.checkBox>ul>li:first-child{width: 85%;padding: 15px;font-weight: 600;color: #888;}
+.checkBox>ul>li:nth-child(2){position: absolute;top: 50%;right: 30px;margin-top: -12px;}
+.checkBox textarea{width: 96%;height: 90px; margin: 0 2%;background-color: #f7f7f7;color: #888; border: none;}
+
+.footBtwrap{margin-top: 15px;}
+.footBtwrap>li{float: left;width: 50%;height: 60px;}
+
+/* 동의 버튼 */
+.footBtwrap>li>div>button{
+	border-radius: 10px 10px 10px 10px; 
+	box-sahdow:3px 3px 3px black;
+	transition-duration:0.3s;
+	width: 50%;height: 80%; font-size: 20px;line-height: 60px;}
+
+
+.footBtwrap>li>div>button:active{
+margin-left:5px;
+margin-top:5px;
+box-shadow:noen;	
+	
+}
+
+.nextBtn2{background-color: #8EC0E4;color: #fff; }/ * #888 회색 비슷한색 */
+.nextBtn{background-color: #E2E2E2;color: #fff;}  

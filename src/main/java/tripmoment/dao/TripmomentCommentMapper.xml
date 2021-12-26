@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tripmomentCommentSQL">
+
+	<select resultType="tripmoment.bean.TripmomentCommentDTO" parameterType="String" id="tripmomentCommentGetList">
+		select * from tripmoment_comment
+		join tripmember using (member_seq) 
+		where moment_seq = #{moment_seq} 
+	</select>
+	
+	<insert parameterType="tripmoment.bean.TripmomentCommentDTO" id="tripmomentCommentWrite">
+		insert into tripmoment_comment(
+		moment_comment_seq, member_seq, moment_comment, moment_comment_logtime, moment_seq)
+		values(
+		moment_comment_seq.nextval, #{member_seq}, #{moment_comment}, sysdate, #{moment_seq})
+	</insert>
+
+</mapper>

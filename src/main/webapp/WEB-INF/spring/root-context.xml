@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<context:component-scan base-package="spring.conf" />
+	
+	<context:component-scan base-package="main.dao" />
+	<context:component-scan base-package="main.service" />
+	<context:component-scan base-package="main.bean" />
+	
+	<context:component-scan base-package="pop.dao" />
+	<context:component-scan base-package="pop.service" />
+	<context:component-scan base-package="pop.bean" />
+	
+	<context:component-scan base-package="area.bean" />
+	<context:component-scan base-package="area.service" />
+	<context:component-scan base-package="area.dao" />
+
+	<context:component-scan base-package="tripmember.bean" />
+	<context:component-scan base-package="tripmember.service" />
+	<context:component-scan base-package="tripmember.dao" />
+	
+	<context:component-scan base-package="tripmoment.bean" />
+	<context:component-scan base-package="tripmoment.service" />
+	<context:component-scan base-package="tripmoment.dao" />
+	
+	<context:component-scan base-package="activities.bean" />
+	<context:component-scan base-package="activities.service" />
+	<context:component-scan base-package="activities.dao" />
+	
+
+    <!-- 메일 보내기 (SEND) -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">     
+	<!--
+	<property name="host" value="smtp.naver.com"/> 	
+    <property name="port" value="465"/>  -->
+        
+	<property name="host" value="smtp.gmail.com" />   <!--   메일서버 호스트 -->
+	<property name="port" value="587" />   	 <!--   메일서버 포트번호 -->
+     
+	<property name="username" value="waterha4" />
+	<property name="password" value="chlqudfla12!A" />
+      
+	<property name="javaMailProperties">
+		<props>    
+			<prop key="mail.smtp.auth">true</prop>
+			<prop key="mail.smtp.starttls.enable">true</prop>
+			<prop key="mail.smtps.checkserveridentity">true</prop>
+			<prop key="mail.smtps.ssl.trust">*</prop>
+			<prop key="mail.debug">true</prop>
+			<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+			
+			<prop key="mail.transport.protocol">smtp</prop>
+			<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+			<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+	    </props>
+	</property>
+	 </bean>
+
+</beans>
