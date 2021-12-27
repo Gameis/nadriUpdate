@@ -49,12 +49,6 @@
 </head>
 <body>
 	<input type="hidden" id="memId" value="${memId }" />
-	<!-- Header -->
-	<%-- <div class="trip_common_head_con">
-		<jsp:include page="./repository/jsp/main/main_top.jsp">
-			<jsp:param value="param1" name="param1" />
-		</jsp:include>
-	</div> --%>
 
 	<div class="trip_main_hd_top_nav">
 		<div class="main_hd trip_main_hd main_hd_line">
