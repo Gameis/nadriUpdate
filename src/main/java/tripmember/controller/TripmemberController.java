@@ -41,7 +41,7 @@ public class TripmemberController {
 
 	@Autowired // 비밀번호 복호화
 	BCryptPasswordEncoder passwordEncoder;
-
+	
 	// 메일 보내기
 	@Autowired
 	private JavaMailSender mailSender;
