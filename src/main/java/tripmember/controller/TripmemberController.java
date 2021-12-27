@@ -56,6 +56,7 @@ public class TripmemberController {
 		System.out.println(tripmemberDTO2);
 		if (tripmemberDTO2 != null) {
 			HttpSession session = request.getSession();
+			System.out.println("memId = " + tripmemberDTO2.getId());
 			session.setAttribute("memName", tripmemberDTO2.getName());
 			session.setAttribute("memId", tripmemberDTO2.getId());
 			session.setAttribute("memEmail", tripmemberDTO2.getEmail());
@@ -75,8 +76,6 @@ public class TripmemberController {
 
 		}
 	} // login
-
-
 
 	@RequestMapping(value = "/logOut", method = RequestMethod.POST)
 	@ResponseBody
@@ -150,13 +149,12 @@ public class TripmemberController {
 
 	@PostMapping("/modify")
 	@ResponseBody
-	public void modify(@ModelAttribute TripmemberDTO tripmemberDTO,
-					   @RequestParam MultipartFile memberImgchange,
-					   HttpSession session) { // dto 여러개는 ModelAttribute로
-		
+	public void modify(@ModelAttribute TripmemberDTO tripmemberDTO, @RequestParam MultipartFile memberImgchange,
+			HttpSession session) { // dto 여러개는 ModelAttribute로
+
 		String profileImg = memberImgchange.getOriginalFilename();
-		
-		tripmemberDTO.setPwd(passwordEncoder.encode(tripmemberDTO.getPwd())); 	//비번 복호화																				
+
+		tripmemberDTO.setPwd(passwordEncoder.encode(tripmemberDTO.getPwd())); // 비번 복호화
 		String id = (String) session.getAttribute("memId");
 		tripmemberDTO.setId(id);
 		tripmemberDTO.setProfileImg(profileImg);
@@ -188,7 +186,7 @@ public class TripmemberController {
 
 		}
 	} // compare
-		
+
 	@PostMapping("/delete")
 	@ResponseBody
 	public void delete(HttpSession session) {
@@ -238,37 +236,32 @@ public class TripmemberController {
 		return num;
 	} // mialCheckGet
 
-	
-	 //개인 이미지 변경하기
-	  @RequestMapping(value="/memberImgchange", method=RequestMethod.POST)
-	  @ResponseBody
-	  public String memberImgchange(@ModelAttribute TripmemberDTO tripmemberDTO,
-			      				  @RequestParam MultipartFile memberImgchange,
-			      				  HttpSession session) {
-		  
-	 
-		  String filePath=
-	//	  "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
-	//	  "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";//현석
-		  "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
-		  String profileImg = memberImgchange.getOriginalFilename(); 
-		 
-		  File file=new File(filePath,profileImg);
-		  
-		  try { 
-			  FileCopyUtils.copy(memberImgchange.getInputStream(), new FileOutputStream(file));
-			  
-			  String id = (String) session.getAttribute("memId");
-			  tripmemberDTO.setId(id);
-			  tripmemberDTO.setProfileImg(profileImg);
-			  
-			  
-			  tripmemberService.imgModify(tripmemberDTO);	  
-		  }catch  (Exception e){
-			  e.printStackTrace(); 
-		  } 
-		  return profileImg;
-	  }
+	// 개인 이미지 변경하기
+	@RequestMapping(value = "/memberImgchange", method = RequestMethod.POST)
+	@ResponseBody
+	public String memberImgchange(@ModelAttribute TripmemberDTO tripmemberDTO,
+			@RequestParam MultipartFile memberImgchange, HttpSession session) {
 
+		String filePath =
+				// "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
+				// "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";//현석
+				"C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
+		String profileImg = memberImgchange.getOriginalFilename();
+
+		File file = new File(filePath, profileImg);
+
+		try {
+			FileCopyUtils.copy(memberImgchange.getInputStream(), new FileOutputStream(file));
+
+			String id = (String) session.getAttribute("memId");
+			tripmemberDTO.setId(id);
+			tripmemberDTO.setProfileImg(profileImg);
+
+			tripmemberService.imgModify(tripmemberDTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return profileImg;
+	}
 
 } // 클래스

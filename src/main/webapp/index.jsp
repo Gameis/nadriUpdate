@@ -68,12 +68,10 @@
 							</div>
 						</c:if>
 
-
 						<c:if test="${memId != null }">
 							<div>
 								<p>
-									<a href="/nadri/tripmember/myPage">${sessionScope.memName}님
-										환영합니다.</a>
+									<a href="/nadri/tripmember/myPage">${sessionScope.memName}님 환영합니다.</a>
 								</p>
 								<button id="logoutBtn" type="button">로그아웃</button>
 							</div>
@@ -208,24 +206,28 @@
 							<form id="writeForm" role="form">
 								<div class="form-group">
 									<label for="inputName">성명</label> <input type="text"
-										class="form-control" name="name" id="inputName" placeholder="이름을 입력해 주세요">
+										class="form-control" name="name" id="inputName"
+										placeholder="이름을 입력해 주세요">
 								</div>
 								<div class="form-group">
 									<label for="inputName">닉네임</label> <input type="text"
-										class="form-control" name="nickName" id="nickName" placeholder="닉네임을 입력해 주세요">
+										class="form-control" name="nickName" id="nickName"
+										placeholder="닉네임을 입력해 주세요">
 								</div>
 								<div class="form-group">
 									<label for="InputId">아이디</label> <input type="text"
-										class="form-control" name="id" id="inputId" placeholder="아이디를 입력해주세요">
+										class="form-control" name="id" id="inputId"
+										placeholder="아이디를 입력해주세요">
 								</div>
 								<div class="form-group">
 									<label for="InputEmail">이메일 주소</label> <input type="email"
 										class="form-control" name="email" id="InputEmail"
-										placeholder="이메일 주소를 입력해주세요">
-									<label class="btn btn-primary" id="emailCheckBtn">인증번호</label>
+										placeholder="이메일 주소를 입력해주세요"> <label
+										class="btn btn-primary" id="emailCheckBtn">인증번호</label>
 								</div>
 								<div class="form-group">
-									<input type="text" class="form-control" id="checkEmail" placeholder="인증번호">
+									<input type="text" class="form-control" id="checkEmail"
+										placeholder="인증번호">
 								</div>
 								<div class="form-group">
 									<label for="inputPassword">비밀번호</label> <input type="password"
@@ -244,21 +246,21 @@
 								</div>
 								<div class="form-group">
 									<label for="zipcode" style="display: block">우편번호</label> <input
-										type="text" class="form-control" name="zipcode" id="zipcode" value="" readonly
-										style="width: 150px; display: inline-block;"> 
+										type="text" class="form-control" name="zipcode" id="zipcode"
+										value="" readonly style="width: 150px; display: inline-block;">
 									<label id="zipcodeBtn" class="btn btn-primary">우편번호</label>
 								</div>
 
 								<div class="form-group">
-										<label id="address">주소</label>
-										<input type="text" id="address" placeholder="주소"
-											name="address" class="form-control" value=" " readonly>
+									<label id="address">주소</label> <input type="text" id="address"
+										placeholder="주소" name="address" class="form-control" value=" "
+										readonly>
 								</div>
 
 								<div class="form-group">
-										<label id="addressDetail">상세주소</label>
-										<input type="text" id="addressDetail" placeholder="상세주소"
-											name="addressDetail" class="form-control" value=" ">
+									<label id="addressDetail">상세주소</label> <input type="text"
+										id="addressDetail" placeholder="상세주소" name="addressDetail"
+										class="form-control" value=" ">
 								</div>
 
 								<div class="form-group">
@@ -279,9 +281,10 @@
 										가입취소<i class="fa fa-times spaceLeft"></i>
 									</button>
 								</div>
-								
-								<input type="hidden" class="imginput" id="profileImg" name="profileImg" value="defaultImg.png">
-							
+
+								<input type="hidden" class="imginput" id="profileImg"
+									name="profileImg" value="defaultImg.png">
+
 							</form>
 						</div>
 					</article>

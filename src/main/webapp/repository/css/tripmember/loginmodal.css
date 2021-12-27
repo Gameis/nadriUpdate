@@ -4,7 +4,9 @@
 	background-position: 0 -48px !important;
 } */
 .modal-content {
-	width: 800px !important;
+	/* 	width: 800px !important;
+ */
+	
 }
 
 .container {
@@ -43,6 +45,8 @@
 	background: #f8e348;
 	border-radius: 5%;
 	overflow: hidden;
+	font-size: 13px;
+	font-family: -webkit-pictograph;
 }
 
 .loginForm {
@@ -132,22 +136,50 @@ keyframes lookaway-down { 0% {
 100
 
 
+
+
+
+
 %
 {
 transform
 
 
+
+
+
+
 :
 
 
+
+
+
+
 rotate3d
+
+
+
+
 (
 
 
+
+
+
+
 -
+
+
+
+
 .2
 ,
 -
+
+
+
+
 .05
 ,
 .01
@@ -155,10 +187,16 @@ rotate3d
 20deg
 
 
+
+
+
+
 )
+
+
+
+
 ;
-
-
 }
 }
 .ears {
