@@ -63,21 +63,21 @@
 		</div>
 		<!--areaDestination-->
 		<div id="areaNav">
-			<a href="#addPopBtn">
+			<a href="#pop">
 				<div class="module">
 					<i class="bi bi-bank"></i>
 					<div>
 						<span>명소</span>
 					</div>
 				</div>
-			</a> <a href="#addHotelBtn">
+			</a> <a href="#hotel">
 				<div class="module">
 					<i class="bi bi-building"></i>
 					<div>
 						<span>호텔</span>
 					</div>
 				</div>
-			</a> <a href="#addActivityBtn">
+			</a> <a href="#activity">
 				<div class="module">
 					<i class="bi bi-tsunami"></i>
 					<div>
@@ -101,6 +101,8 @@
 			</div>
 		</div>
 		<!--areaMainImg-->
+		<div id="pop" style="display: hidden;"></div>
+		<br>
 		<div class="areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>지역 이름 인기명소</span>
@@ -130,6 +132,8 @@
 		<!--areaSlideTitle-->
 		<!--여기까지 인기명소-->
 		<!--여기부터 인기호텔-->
+		<div id="hotel" style="display: hidden;"></div>
+		<br>
 		<div class="areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>인기 호텔</span>
@@ -159,6 +163,8 @@
 		<!--areaPopularLocation-->
 		<!--여기까지 인기호텔-->
 		<!--여기부터 액티비티-->
+		<div id="activity" style="display: hidden;"></div>
+		<br>
 		<div class="areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>액티비티</span>
