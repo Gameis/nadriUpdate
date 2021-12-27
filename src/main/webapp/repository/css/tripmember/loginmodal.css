@@ -9,12 +9,20 @@
 	
 }
 
+.btn-secondary {
+	border-color: white !important;
+}
+
 .container {
 	margin-left: 164px !important;
 }
 
 .modal-body::-webkit-scrollbar {
 	display: none !important;
+}
+
+.dropdown-menu {
+	font-size: 15px !important;
 }
 
 /* 카카오 로그인  */
@@ -61,16 +69,25 @@
 .logout_wrap {
 	float: left;
 }
+
+.btn-group {
+	padding: 4px;
+}
+
+.btn-sm {
+	height: 37px;
+}
 /* 로그아웃버튼 */
 #logoutBtn {
-	color: #808080;
+	/* 	color: #808080;
 	padding: 1px 1px;
 	width: 100px;
 	height: 25px;
 	border: 1px solid #7EC0E4;
 	background: #8EC0E4;
 	border-radius: 5%;
-	overflow: hidden;
+	overflow: hidden; */
+	
 }
 
 .form-floating input[type="text"] {
@@ -140,9 +157,25 @@ keyframes lookaway-down { 0% {
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
 
 
 
@@ -156,7 +189,23 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 rotate3d
+
+
+
+
+
+
+
+
 
 
 
@@ -168,7 +217,23 @@ rotate3d
 
 
 
+
+
+
+
+
+
+
+
 -
+
+
+
+
+
+
+
+
 
 
 
@@ -176,6 +241,14 @@ rotate3d
 .2
 ,
 -
+
+
+
+
+
+
+
+
 
 
 
@@ -191,7 +264,23 @@ rotate3d
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 

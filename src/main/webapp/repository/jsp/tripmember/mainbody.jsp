@@ -7,16 +7,12 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-
-
-
 .container{margin-top:250px;
 	position:relative;
 	width:100%;
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	
 }
 
 .container .ring{
