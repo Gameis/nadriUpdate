@@ -48,7 +48,7 @@
 
 </head>
 <body>
-	<input type="text" id="memId" value="${memId }" />
+	<input type="hidden" id="memId" value="${memId }" />
 
 	<div class="trip_main_hd_top_nav">
 		<div class="main_hd trip_main_hd main_hd_line">
@@ -69,11 +69,20 @@
 						</c:if>
 
 						<c:if test="${memId != null }">
-							<div>
+							<%-- <div>
 								<p>
 									<a href="/nadri/tripmember/myPage">${sessionScope.memName}님 환영합니다.</a>
+									<button id="logoutBtn" type="button">로그아웃</button>
 								</p>
-								<button id="logoutBtn" type="button">로그아웃</button>
+							</div> --%>
+							<div class="btn-group" style="margin-right: 8px;">
+								<button class="btn btn-secondary btn-sm dropdown-toggle"
+									type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">${sessionScope.memName}님</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="/nadri/tripmember/myPage">마이페이지</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#" id="logoutBtn">로그아웃</a></li>
+								</ul>
 							</div>
 						</c:if>
 
