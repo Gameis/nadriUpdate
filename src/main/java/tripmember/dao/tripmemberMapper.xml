@@ -26,10 +26,10 @@
 	</select> 	
 	
  	<insert id="write" parameterType="tripmember">
-		insert into tripmember values(member_seq.nextval,#{name}, #{id},#{nickName},#{pwd}
+		insert into tripmember values(member_seq.nextval,#{name}, #{id}, #{nickName}, #{pwd}
 								,#{tel}
 								,#{email}
-								,#{zipcode}, #{address}, #{addressDetail},#{profileImg}
+								,#{zipcode}, #{address}, #{addressDetail}, #{profileImg}
 								, sysdate) 	
 	</insert>	
 	
