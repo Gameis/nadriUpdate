@@ -17,6 +17,7 @@ import area.bean.TripActivityDTO;
 import area.bean.TripHotelDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
+import area.bean.WeatherLocationDTO;
 
 @Repository
 @Transactional
@@ -96,5 +97,12 @@ public class AreaDAOMybatis implements AreaDAO {
 	@Override
 	public List<HotelMainDTO> onAreaHotel(String main_seq) {
 		return sqlSession.selectList("areaSQL.onAreaHotel", main_seq);
+	}
+
+	@Override
+	public WeatherLocationDTO getWeatherLoaction(String main_name) {
+		WeatherLocationDTO weatherLocationDTO = sqlSession.selectOne("areaSQL.getWeatherLoactionFirst", main_name);
+		if(weatherLocationDTO == null) weatherLocationDTO = sqlSession.selectOne("areaSQL.getWeatherLoactionSecond", main_name);
+		return weatherLocationDTO;
 	}
 }

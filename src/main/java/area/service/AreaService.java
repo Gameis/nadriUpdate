@@ -11,6 +11,7 @@ import area.bean.TripActivityDTO;
 import area.bean.TripHotelDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
+import area.bean.WeatherLocationDTO;
 
 public interface AreaService {
 	public void popWrite(TripPopDTO tripPopDTO, TripPopMapDTO tripPopMapDTO);
@@ -34,4 +35,6 @@ public interface AreaService {
 	public void imgHotelWrite(ImgDTO imgDTO);
 
 	public List<HotelMainDTO> onAreaHotel(String main_seq);
+	
+	public WeatherLocationDTO getWeatherLoaction(String main_name);
 }

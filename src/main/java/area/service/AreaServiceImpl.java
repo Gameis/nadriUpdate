@@ -14,6 +14,7 @@ import area.bean.TripActivityDTO;
 import area.bean.TripHotelDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
+import area.bean.WeatherLocationDTO;
 import area.dao.AreaDAO;
 
 @Component
@@ -81,6 +82,11 @@ public class AreaServiceImpl implements AreaService {
 	@Override
 	public List<HotelMainDTO> onAreaHotel(String main_seq) {
 		return areaDAO.onAreaHotel(main_seq);
+	}
+
+	@Override
+	public WeatherLocationDTO getWeatherLoaction(String main_name) {
+		return areaDAO.getWeatherLoaction(main_name);
 	}
 
 

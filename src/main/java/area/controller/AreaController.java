@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -27,6 +26,7 @@ import area.bean.TripActivityDTO;
 import area.bean.TripHotelDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
+import area.bean.WeatherLocationDTO;
 import area.service.AreaService;
 
 @Controller
@@ -155,6 +155,13 @@ public class AreaController {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	@RequestMapping(value="/getWeatherLocation", method=RequestMethod.GET)
+	@ResponseBody
+	public WeatherLocationDTO getWeatherLoaction(@RequestParam("main_name") String main_name) {
+		System.out.println("main_name = " + main_name);
+		return areaService.getWeatherLoaction(main_name);
 	}
 	
 	//함수

@@ -117,4 +117,12 @@
 		join img on(hotel_seq = seq)
 		where content_seq = 4 and triphotel.main_seq = #{main_seq}
 	</select>
+	
+	<select id="getWeatherLoactionFirst" parameterType="String" resultType="weatherLocation">
+		select * From weatherLocation where firstLocation like '%'||#{main_name}||'%' and rownum = 1
+	</select>
+	
+	<select id="getWeatherLoactionSecond" parameterType="String" resultType="weatherLocation">
+		select * From weatherLocation where secondLocation like '%'||#{main_name}||'%' and rownum = 1
+	</select>
 </mapper>
