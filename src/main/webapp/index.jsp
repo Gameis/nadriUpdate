@@ -48,7 +48,7 @@
 
 </head>
 <body>
-	<input type="hidden" id="memId" value="${memId }" />
+	<input type="text" id="memId" value="${memId }" />
 
 	<div class="trip_main_hd_top_nav">
 		<div class="main_hd trip_main_hd main_hd_line">
