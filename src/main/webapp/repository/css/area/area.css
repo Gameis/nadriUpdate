@@ -341,6 +341,7 @@ h2 span {
 
 .score-bar {
 	width: 100%;
+	height: 10px;
 	top: 20px;
 }
 

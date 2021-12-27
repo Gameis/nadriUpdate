@@ -337,7 +337,6 @@
 			data: 'main_seq=' + $('#main_seq').val(),
 			success: function(data) {
 				num = 0;
-				alert(JSON.stringify(data));
 				$.each(data, function(index, items){
 					$('.areaPathItem').last().text(items.main_name);
 					$('#main_name').val(items.main_name);
@@ -361,8 +360,6 @@
 					url: '/nadri/area/getWeatherLocation',
 					data: 'main_name=' + $('#main_name').val(),
 					success: function(data){
-						alert('날씨 정보 성공!');
-						alert(JSON.stringify(data));
 						weather(data.location_x, data.location_y);
 					},
 					error: function(err) {

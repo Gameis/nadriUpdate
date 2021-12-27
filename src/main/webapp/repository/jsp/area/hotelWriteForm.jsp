@@ -16,11 +16,11 @@
 		위치 : <input type="text" name="hotel_location" value=""/><br/>
 		서비스 : <input type="text" name="hotel_service" value=""/><br/>
 		메인이미지 : <input type="file" name="main_img" id="img"/><br/>
-		<!-- 호텔 주소 :  --><input type="hidden" name="hotel_address" value=""/><br/>
-		<!-- 건축년도 :  --><input type="hidden" name="hotel_year" value=""/><br/>
-		<!-- 리모델링 :  --><input type="hidden" name="hotel_remodeling" value=""/><br/>
-		<!-- 객실 수 :  --><input type="hidden" name="hotel_room" value=""/><br/>
-		<!-- 호텔 정보 :  --><input type="hidden" name="hotel_info" value=""/><br/>
+		호텔 주소 : <input type="text" name="hotel_address" value=""/><br/>
+		건축년도 : <input type="text" name="hotel_year" value=""/><br/>
+		리모델링 : <input type="text" name="hotel_remodeling" value=""/><br/>
+		객실 수 : <input type="text" name="hotel_room" value=""/><br/>
+		호텔 정보 : <input type="text" name="hotel_info" value=""/><br/>
 		<input type="button" id="hotelWriteBtn" value="작성완료"/><input type="reset" value="다시작성"/>
 	</form>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>

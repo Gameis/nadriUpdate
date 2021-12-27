@@ -48,7 +48,7 @@
 
 </head>
 <body>
-	<input type="text" id="memId" value="${memId }" />
+	<input type="hidden" id="memId" value="${memId }" />
 
 	<div class="trip_main_hd_top_nav">
 		<div class="main_hd trip_main_hd main_hd_line">
@@ -145,7 +145,7 @@
 
 						<div class="form-floating">
 							<input type="text" class="form-control" id="floatingInput"
-								name="floatingInput" placeholder="Identification"> <label
+								name="floatingInput" onkeyup="loginEnterkey()" placeholder="Identification"> <label
 								for="floatingInput">Identification</label>
 							<div id="modalidDiv"></div>
 						</div>
@@ -153,7 +153,7 @@
 
 						<div class="form-floating">
 							<input type="password" class="form-control" id="floatingPassword"
-								name="floatingPassword" placeholder="Password"> <label
+								name="floatingPassword" onkeyup="loginEnterkey()" placeholder="Password"> <label
 								for="floatingPassword">Password</label>
 							<div id="modalpwdDiv"></div>
 						</div>
@@ -546,7 +546,11 @@
 <script src="/nadri/repository/js/tripmember/tripmember.js"></script>
 <script type="text/javascript">
 
-
+function loginEnterkey() {
+	if(window.event.keyCode == 13) {
+		$('#modalLoginBtn').trigger('click');
+	}
+}
 
 $('.btn-close').click(function(){
 	location.href='/nadri/index.jsp';	
@@ -559,9 +563,11 @@ $('#modalLoginBtn').click(function(){
 
 	if($('#floatingInput').val()==''){
 		$('#modalidDiv').html('아이디를 입력해주세요');
+		$('#floatingInput').focus();
 	}	
 	else if($('#floatingPassword').val()==''){
 		$('#modalpwdDiv').html('비밀번호를 입력해주세요');
+		$('#floatingPassword').focus();
 	}	
 	else{
 		$.ajax({
