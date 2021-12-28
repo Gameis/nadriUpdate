@@ -46,9 +46,9 @@ public class PopController {
 								@RequestParam("img[]") List<MultipartFile> list,
 								HttpServletRequest request) {
 		
-		String root_path = request.getSession().getServletContext().getRealPath("/");
-        String attach_path = "repository\\img\\popular\\review";
-        String path = root_path + attach_path;
+//		String root_path = request.getSession().getServletContext().getRealPath("/");
+//        String attach_path = "repository\\img\\popular\\review";
+        String path = "\\popular\\review";
         
         System.out.println(request.getSession().getServletContext().getRealPath("/"));
 		//받아오기전까지만 쓰기//////////////////////////////////////////////////////////
@@ -141,8 +141,8 @@ public class PopController {
 	
 	//함수
 		public void imgReNameCopy(TripPopImgDTO tripPopImgDTO, MultipartFile img, String isMain, String img_path, String path) {
-//		String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
-		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\popular\\review"; //현석
+		String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
+//		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\popular\\review"; //현석
 //		String filePath = path; //현석
 		
 		String fileName = null;
@@ -161,7 +161,7 @@ public class PopController {
 		if(fileName==""){
 			System.out.println("땡땡찍혔따");
 			fileName = "noImg.jpg";
-			file = new File(path, fileName);
+			file = new File(filePath, fileName);
 		
 		}
 		
