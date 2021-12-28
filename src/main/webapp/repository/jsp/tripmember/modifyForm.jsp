@@ -11,20 +11,20 @@
 <body>
 	<div class="wrapper">
 		<div class="wrap">
-			<form id="modifyForm2">
+			<form id="modifyForm">
 				<div class="modifysubject">
 					<span>내정보수정</span>
 				</div>
-				<div>
+				<div class="imgname">이미지 변경</div>
+				<div style="margin-top: 16px;">
 					<div>
-						<label for="memberImgBtn"> <img id="memberImgchange"
-							src="/nadri/repository/img/tripmember/defaultImg.png"
+						<label for="memberImgBtn"> 
+						<img id="memberImgchange" src="/nadri/repository/img/tripmember/defaultImg.png"
 							class="myImg" alt="변경이미지" style="cursor: pointer;">
 						</label>
 					</div>
 					<div style="display: none;">
-						<input type="file" id="memberImgBtn" class="memberImgchange"
-							name="memberImgchange">
+						<input type="file" id="memberImgBtn" class="memberImgchange" name="memberImgchange">
 					</div>
 				</div>
 				<div class="pw_wrap">
@@ -61,7 +61,7 @@
 					<div class="emailtext">
 						<input type="text" name="email" id="email" class="emailinputbox">
 						<div class="emailcheckbutton" id="emailcheckbutton">
-							<span>인증메일전송</span>
+							<span style="font-size: 20px;">인증메일전송</span>
 						</div>
 					</div>
 					<div class="emailcheck_wrap">
@@ -80,7 +80,7 @@
 							<input class="addressinput1" id="zipcode" name="zipcode" readonly>
 						</div>
 						<div class="addressbutton" id="zipcodeBtn">
-							<span>우편번호검색</span>
+							<span style="font-size: 20px;">우편번호검색</span>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -138,7 +138,7 @@ $('#modifyBtn').click(function(){
 	$('#addressDiv').empty();
 	
  	if($('#pwd').val()==''){
-		$('#pwdDiv').html('변경될 비밀번호를 입력해주세요 ');		
+		$('#pwdDiv').html('변경할 비밀번호를 입력해주세요 ');		
 	}else if(($('#repwd').val()=='')||($('#pwd').val() != $('#repwd').val())){
 		$('#repwdDiv').html('비밀번호를 확인해주세요 ');
 	}else if($('#nickName').val()==''){
@@ -171,7 +171,7 @@ $('#modifyBtn').click(function(){
 });	//modifyBtn click 
 
 $('.memberImgchange').change(function(){
-//시리얼 라이즈로 멀티파트 즉 그림형태는 못넘기는듯
+//시리얼 라이즈로 멀티파트 즉 그림 형태는 못 넘기는듯
 	var formData = new FormData($('#modifyForm')[0]);
 //	alert("뜨냐");
 	$.ajax({
@@ -189,7 +189,6 @@ $('.memberImgchange').change(function(){
 			//$('#memberImgchange').attr('src','/nadri/repository/img/tripmember/storage/'+data+'?timestamp='+date.getTime());
 			$('#memberImgchange').attr('src','/nadri/repository/img/tripmember/storage/'+data);
 			location.reload();
-	
 		},
 		error:function(err){
 			console.log(err);
@@ -236,7 +235,6 @@ $('#checkPostSearchBtn').click(function(){
 				
 			}))).appendTo($('#zipcodeTable'));												
 		});	//each
-		
 	
 		$('.addressA').click(function(){
 			$('#zipcode', opener.document).val($(this).parent().prev().text());
@@ -244,8 +242,7 @@ $('#checkPostSearchBtn').click(function(){
 			$('#address', opener.document).val($(this).text());
 			window.close();		//창만 닫힐뿐 제어권이 사라진게 아니다
 			$('#addressDetail', opener.document).focus();
-		});		// addressA click
-			
+		});		// addressA click	
 		},	//success
 		
 		error:function(err){
@@ -253,7 +250,6 @@ $('#checkPostSearchBtn').click(function(){
 		}		
 	});		//ajax
 });		//checkPostSearchBtn click
-
 
 //이메일 인증번호전송
 var mailcode = "";

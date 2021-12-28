@@ -8,15 +8,24 @@
 	padding: 5px 5px;
 }
 
+.imgname {
+	float: left;
+	font-size: 19px;
+	font-weight: 90;
+	margin-top: 14px;
+}
+
 .myImg {
-	margin-top: 15px;
-	width: 100px;
-	height: 100px;
+	margin-top: 30px;
+	width: 180px; height : 200px;
+	margin-left: -98px;
+	height: 200px;
 }
 
 /* 화면 전체 렙 */
 .wrapper {
 	width: 1000px;
+	margin-left: 50px;
 }
 
 /* content 랩 */
@@ -27,15 +36,15 @@
 
 /* 페이지 제목 */
 .modifysubject {
-	margin-top: 10px;
+	margin-top: 20px;
 	width: 100%;
 	height: 40px;
 	background-color: #4062ea;
 }
 
 .modifysubject span {
-	margin-left: 5px;
-	font-size: 30px;
+	margin-left: 9px;
+	font-size: 26px;
 	font-weight: 90;
 	color: white;
 }
@@ -48,8 +57,7 @@
 
 .pwname {
 	float: left;
-	font-style: italic;
-	font-size: 25px;
+	font-size: 19px;
 	font-weight: 90;
 }
 
@@ -64,13 +72,15 @@
 	border: 1px solid black;
 	height: 35px;
 	padding: 2px 2px;
+	margin-left: 3px;
+	width: 31%;
 }
 
 .pwinput {
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 24px;
+	font-size: 17px;
 }
 
 /* 비밀번호 확인 영역 */
@@ -81,8 +91,7 @@
 
 .pwckname {
 	float: left;
-	font-style: italic;
-	font-size: 25px;
+	font-size: 19px;
 	font-weight: 90;
 }
 
@@ -97,13 +106,15 @@
 	border: 1px solid black;
 	height: 35px;
 	padding: 2px 2px;
+	margin-left: 3px;
+	width: 31%;
 }
 
 .pwckinput {
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 24px;
+	font-size: 17px;
 }
 
 /* 닉네임 영역 */
@@ -114,8 +125,7 @@
 
 .nickname {
 	float: left;
-	font-style: italic;
-	font-size: 25px;
+	font-size: 19px;
 	font-weight: 90;
 }
 
@@ -130,13 +140,15 @@
 	border: 1px solid black;
 	height: 35px;
 	padding: 2px 2px;
+	margin-left: 3px;
+	width: 31%;
 }
 
 .nickinput {
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 24px;
+	font-size: 17px;
 }
 
 /* 핸드폰 영역 */
@@ -147,8 +159,7 @@
 
 .telname {
 	float: left;
-	font-style: italic;
-	font-size: 25px;
+	font-size: 19px;
 	font-weight: 90;
 }
 
@@ -172,11 +183,11 @@
 
 .telinput {
 	border: 1px solid black;
-	width: 25%;
+	width: 31%;
 	height: 35px;
-	text-align: center;
 	padding: 0px 0px;
-	font-size: 24px;
+	font-size: 17px;
+	margin-left: 3px;
 }
 
 /* 메일 영역 */
@@ -187,8 +198,7 @@
 
 .emailname {
 	float: left;
-	font-style: italic;
-	font-size: 25px;
+	font-size: 19px;
 	font-weight: 90;
 }
 
@@ -203,18 +213,21 @@
 }
 
 .emailinputbox {
+	clear: both;
 	border: 1px solid black;
 	height: 35px;
 	padding: 2px 2px;
+	margin-left: 3px;
 	width: 31%;
-	font-size: 24px;
+	font-size: 17px;
 }
 
 .emailinput {
 	width: 100%;
 	height: 100%;
 	border: none;
-	font-size: 24px;
+	font-size: 20px;
+	margin-left: 3px;
 }
 
 .emailcheck_wrap {
@@ -265,8 +278,7 @@
 
 .addressname {
 	float: left;
-	font-style: italic;
-	font-size: 25px;
+	font-size: 19px;
 	font-weight: 90;
 }
 
