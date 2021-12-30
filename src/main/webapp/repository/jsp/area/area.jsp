@@ -7,20 +7,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>서울 여행 코스 & 인기 여행지 추천 | 트립닷컴</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/nadri/repository/css/area/area.css">
-<link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon"
-	type="image/x-icon">
+<link rel="stylesheet" href="/nadri/repository/css/area/writeForm.css">
+<link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 	<input type="hidden" id="main_seq" value="${param.main_seq}" />
-	<input type="hidden" id="main_name" value="" />
+	<input type="hidden" id="main_name" value=""/>
 	<input type="hidden" id="memId" value="${memId }" />
 	<div id="areaWrap">
 		<div id="areaHeader">
@@ -84,7 +79,7 @@
 						<span>액티비티</span>
 					</div>
 				</div>
-			</a> <a href="#">
+			</a> <a href="#tripmoment">
 				<div class="module">
 					<i class="bi bi-camera"></i>
 					<div>
@@ -106,7 +101,7 @@
 		<div class="areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>지역 이름 인기명소</span>
-				<button class="btn btn-primary addButton" id="addPopBtn">+</button>
+				<button class="btn btn-primary addButton" id="addPopBtn" data-bs-toggle="modal" data-bs-target="#popWriteForm">+</button>
 			</h2>
 			<!--divSlide-->
 			<div class="areaSlide" style="background: rgba(40, 125, 250, .1);">
@@ -130,6 +125,54 @@
 			<!--areaSlide-->
 		</div>
 		<!--areaSlideTitle-->
+		<div class="modal fade" id="popWriteForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">인기 명소</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+				<form id="popWriteForm" class="popWriteForm">
+				   	<input type="hidden" name="content_seq" id="content_seq" value="3"/>
+				   	<input type="hidden" name="main_seq" id="main_seq" value="${param.main_seq }"/>
+				   	<div id="popWriteDiv">
+				   		<div>명소이름</div>
+				   		<div class="inputDiv"><input type="text" name="pop_name" id="pop_name"/></div>
+				   		<div>영업시간</div>
+				        <div><input type="text" name="pop_businessTime" id="pop_businessTime"/></div>
+				        <div>관광시간</div>
+				        <div><input type="text" name="pop_tourismTime" id="pop_tourismTime"/></div>
+				        <div>전화번호</div>
+				        <div><input type="text" name="pop_call" id="pop_call"/></div>
+				        <div>주소</div>
+				        <div><input type="text" name="address_name" id="address_name" class="address_name" readonly/></div>
+				        <div>x</div>
+				        <div><input type="text" name="map_x" id="map_x" class="map_x" readonly/></div>
+				        <div>y</div>
+				        <div><input type="text" name="map_y" id="map_y" class="map_y" readonly/></div>
+				        <div>메인이미지</div>
+				        <div>
+				        	<label for="btnAtt">
+					        	<div id="att_zone" style="display: inline-block; position:relative; z-index: 1; width: 100px; height: 100px;">
+					        		<img style="width: 100%; height: 100%; z-index:none; color:red;" src="/nadri/repository/img/area/plus.svg"/>
+					        	</div>
+				        	</label>
+				        	<div style="display: none;"><input type="file" name="main_img" id="btnAtt"/></div>
+				        </div>	
+				        <div>이미지 : </div>
+				        <div><div id="image_container"></div><input type="file" name="img[]" id="img" multiple/></div>
+				        <div style="position: relative; top:-37px;">추가정보소개 : </div>
+				        <div><textarea rows="5" cols="35" name="detailInfo" id="detailInfo" style="border: 1px solid; border-color: #80808078;"></textarea></div>
+					</div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" id="popWriteBtn">작성완료</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 		<!--여기까지 인기명소-->
 		<!--여기부터 인기호텔-->
 		<div id="hotel" style="display: hidden;"></div>
@@ -137,7 +180,7 @@
 		<div class="areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>인기 호텔</span>
-				<button class="btn btn-primary addButton" id="addHotelBtn">+</button>
+				<button class="btn btn-primary addButton" id="addHotelBtn" data-bs-toggle="modal" data-bs-target="#hotelWriteForm">+</button>
 			</h2>
 			<!--divSlide-->
 			<div class="areaSlide">
@@ -156,11 +199,51 @@
 						<span class="visually-hidden">Next</span>
 					</button>
 				</div>
-				<!--areaHotel_slide-->
 			</div>
-			<!--areaPopularLocation_slide-->
 		</div>
-		<!--areaPopularLocation-->
+		<div class="modal fade" id="hotelWriteForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">인기 호텔</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+				<form id="hotelWriteForm">
+					<input type="hidden" id="content_seq" name="content_seq" value="4"/>
+					<input type="hidden" id="main_seq" name="main_seq" value="${param.main_seq }"/>
+					<div id="hotelWriteDiv">
+						<div>호텔 이름</div>
+						<div><input type="text" name="hotel_name" value=""/></div>
+						<div>청결도</div>
+						<div><input type="text" name="hotel_clean" value=""/></div>
+						<div>시설</div>
+						<div><input type="text" name="hotel_facility" value=""/></div>
+						<div>위치</div>
+						<div><input type="text" name="hotel_location" value=""/></div>
+						<div>서비스</div>
+						<div><input type="text" name="hotel_service" value=""/></div>
+						<div>호텔 주소</div>
+						<div><input type="text" name="hotel_address" value=""/></div>
+						<div>건축년도</div>
+						<div><input type="text" name="hotel_year" value=""/></div>
+						<div>리모델링</div>
+						<div><input type="text" name="hotel_remodeling" value=""/></div>
+						<div>객실 수</div>
+						<div><input type="text" name="hotel_room" value=""/></div>
+						<div>메인이미지</div>
+						<div><input type="file" name="main_img" id="img"/></div>
+						<div style="position: relative; top:-37px;">호텔 정보</div>
+						<div><textarea rows="5" cols="35" name="hotel_info" style="border: 1px solid; border-color: #80808078;"></textarea></div>
+					</div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" id="hotelWriteBtn">작성완료</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 		<!--여기까지 인기호텔-->
 		<!--여기부터 액티비티-->
 		<div id="activity" style="display: hidden;"></div>
@@ -168,7 +251,7 @@
 		<div class="areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>액티비티</span>
-				<button class="btn btn-primary addButton" id="addActivityBtn">+</button>
+				<button class="btn btn-primary addButton" id="addActivityBtn" data-bs-toggle="modal" data-bs-target="#activityWriteForm">+</button>
 			</h2>
 			<!--divSlide-->
 			<div class="areaSlide">
@@ -189,9 +272,54 @@
 				</div>
 				<!--areaHotel_slide-->
 			</div>
-			<!--areaPopularLocation_slide-->
 		</div>
-		<!--areaPopularLocation-->
+		<div class="modal fade" id="activityWriteForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">액티비티</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+				<form id="activityWriteForm">
+					<input type="hidden" name="content_seq" id="content_seq" value="5"/>
+			    	<input type="hidden" name="main_seq" id="main_seq" value="${param.main_seq }"/>
+			    	<div id="activityWriteDiv">
+				    	<div>액티비티 이름</div>
+				   		<div><input type="text" name="activity_name" id="activity_name"></div>
+						<div>액티비티 핵심 포인트</div>
+						<div><input type="text" name="activity_point" id="activity_point"></div>
+						<div>액티비티 가격</div>
+						<div><input type="text" name="activity_price" id="activity_price"></div>
+						<div>할인율</div>
+						<div><input type="text" name="activity_saleRate" id="activity_saleRate"></div>
+						<div>옵션</div>
+						<div id="activity_option"><label>T<input type="radio" name="activity_option" value="T"></label><label>F<input type="radio" name="activity_option" value="F"></label></div>
+						<div>유효 기간</div>
+						<div><input type="text" name="activity_validDate" id="activity_validDate"></div>
+						<div>포함 사항</div>
+						<div><input type="text" name="activity_inclusion" id="activity_inclusion"></div>
+						<div>취소 및 환불 규정</div>
+						<div><input type="text" name="activity_refund" id="activity_refund"></div>
+						<div>사용방법</div>
+						<div><input type="text" name="activity_used" id="activity_information"></div>
+						<div>상품 정보</div>
+						<div><input type="text" name="activity_information" id="activity_information"></div>
+						<div>주의 사항</div>
+						<div><input type="text" name="activity_warning" id="activity_warning"></div>
+						<div>메인이미지</div>
+						<div><input type="file" name="main_img" id="img"/></div>
+						<div>이미지</div>
+						<div><input type="file" name="img[]" id="img" multiple/></div>
+					</div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" id="activityWriteBtn">작성완료</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 		<!--여기까지 액티비티-->
 		<div class="areaInfo">
 			<h2>지역이름 여행 정보</h2>
@@ -219,7 +347,7 @@
 											<button type="button" class="btn-close"
 												data-bs-dismiss="modal" aria-label="Close"></button>
 										</div>
-										<div class="modal-body"></div>
+										<div class="modal-body" id="seoulInfo"></div>
 									</div>
 								</div>
 							</div>
@@ -294,6 +422,26 @@
 			</div>
 			<!-- area-weather-Info -->
 		</div>
+		<div id="tripmoment" style="display: hidden;"></div>
+		<br>
+		<div class="tripmomentSlide areaSlideTitle">
+			<h2 style="font-weight: bold;">
+				<span>트립모먼트</span>
+			</h2>
+			<div id="carousel_tripmoment_slide" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner" id="moment_carousel_inner"></div>
+				<button class="carousel-control-prev" type="button"
+					data-bs-target="#carousel_tripmoment_slide" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button"
+					data-bs-target="#carousel_tripmoment_slide" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
 	</div>
 	<!--areaWrap-->
 	<div id="wrap_foot">
@@ -310,6 +458,9 @@
 		crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/nadri/repository/js/area/area.js"></script>
 	<script type="text/javascript">
+	function locationhref(moment_seq) {
+    	location.href="/nadri/tripmoment/tripmomentView?moment_seq=" + moment_seq 
+    }
 	
 	//검색
 	function searchEnterkey() {
@@ -359,7 +510,7 @@
 					else if(items.mainImg == 'M')
 					$('.map-box img').prop("src", "/nadri/repository/img" + "/" + items.img_path + "/" + items.img_name);
 					$(".area-content-text p").text(items.main_info);
-					$(".modal-body").text(items.main_info);
+					$("#seoulInfo").text(items.main_info);
 				 }); 
 				
 				$.ajax({
@@ -705,6 +856,64 @@
 	            console.log(err);
 	        }
 	    });
+	    
+	    $.ajax({
+			url : '/nadri/tripmoment/onTripmoment',
+			type : 'get',
+			success : function(data) {
+					var count = -1;
+			        var momentCount = 1;	
+
+				$.each(data, function(index, items){
+					if(index % 4 == 0) {
+
+			            if(index == 0) {
+			              $('<div/>', {
+			                class: 'carousel-item active'
+			              }).append($('<div/>', {
+			                class: 'card-group'
+			              })).appendTo($('#moment_carousel_inner'));
+			            }else {
+			              $('<div/>', {
+			                class: 'carousel-item'
+			              }).append($('<div/>', {
+			                class: 'card-group'
+			              })).appendTo($('#moment_carousel_inner'));
+			            }            
+			            count++;
+			          }
+					
+					$('<div>', {
+						class: 'cardstyle card index_card_con',
+						onclick : 'locationhref('+ items.moment_seq + ')'
+					}).append($('<div>', {
+						style: '', 
+						class: 'slide_img'
+					}).append($('<div>', {
+						class: 'img'
+					}).append($('<img>', {
+						src: '/nadri/repository/img/' + items.img_path + '/' + items.img_name,
+						class: 'card-img-top',
+						alt: '트립1'
+					})))).append($('<div>', {
+						class: 'bottom_con'
+					}).append($('<div>', {
+						style: '-webkit-box-orient: vertical', 
+						class: 'bottom_desc',
+						text: items.moment_content
+					})).append($('<div>', {
+						class: 'bottom_user_left'
+					}).append($('<i>', {
+						class: 'bi bi-person-circle'
+					})).append($('<span>', {
+						text: items.nickname
+					})))).appendTo($('#moment_carousel_inner .card-group:eq(' + count + ')'));
+				})//each
+			},
+			error : function(err) {
+				
+			}
+		});
 	}
 </script>
 </body>

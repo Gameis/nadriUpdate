@@ -531,3 +531,25 @@ h2 span {
 .trip_main_footer {
 	margin-top: 100px !important;
 }
+
+.bottom_desc {
+	height: 40px;
+	line-height: 20px;
+	margin-bottom: 12px;
+	font-size: 14px;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.index_card_con .bottom_user_con {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}

@@ -8,12 +8,21 @@
 <style type="text/css">
 	#popWriteDiv {
 		display: grid;
-		grid-template-columns: 200px 500px;
+		grid-template-columns: 200px 280px;
 		grid-template-rows: repeat(11, 1fr);
 		align-items: center;
 	    justify-content: center;
 	    justify-items: center;
+	    height: 500px;
 	}
+	
+	#popWriteDiv input, #popWiretDiv textArea {
+		border: none;
+		width: 100%;
+		height: 100%;
+	}
+	
+	
 </style>
 </head>
 <body>
@@ -22,7 +31,7 @@
     	<input type="hidden" name="main_seq" id="main_seq" value="${param.main_seq }"/><br/>
     	<div id="popWriteDiv">
     		<div>명소이름 : </div>
-    		<div><input type="text" name="pop_name" id="pop_name"/></div>
+    		<div class="inputDiv"><input type="text" name="pop_name" id="pop_name"/></div>
     		<div>영업시간 : </div>
 	        <div><input type="text" name="pop_businessTime" id="pop_businessTime"/></div>
 	        <div>관광시간 : </div>

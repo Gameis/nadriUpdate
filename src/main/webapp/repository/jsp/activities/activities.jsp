@@ -31,7 +31,7 @@
 		<div class="product-detail-breadcrumbs">
 			<div class="crumbs-wrap ">
 				<div class="crumbs-item">
-					<a href="#">홈</a> <span class="crumbs-separator">&gt;</span>
+					<a href="/nadri">홈</a> <span class="crumbs-separator">&gt;</span>
 				</div>
 				<div class="crumbs-item">
 					<a href="#">서울 액티비티</a> <span class="#">&gt;</span>
