@@ -243,9 +243,9 @@ public class TripmemberController {
 			@RequestParam MultipartFile memberImgchange, HttpSession session) {
 
 		String filePath =
-				// "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
+				 "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
 				// "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";//현석
-				"C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
+				// "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
 		String profileImg = memberImgchange.getOriginalFilename();
 
 		File file = new File(filePath, profileImg);

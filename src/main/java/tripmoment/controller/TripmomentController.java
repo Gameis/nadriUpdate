@@ -97,8 +97,8 @@ public class TripmomentController {
 	}
 	
 		public void imgReNameCopy(ImgDTO imgDTO, MultipartFile img, String isMain, String img_path, String path) {
-//			String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //수정
-			String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path;
+			String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //수정
+//			String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path;
 			//String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
 //			String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
 

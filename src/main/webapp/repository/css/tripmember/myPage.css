@@ -86,7 +86,7 @@ main {
 
 .btn-toggle-nav li:hover, .btn-toggle-nav li:focus {
 	background-color: #eef5ff;
-	border-left-color: #3264FF;
+	border-left-color: #3264FF !important;
 }
 
 /* .btn-toggle:hover, .btn-toggle:focus {

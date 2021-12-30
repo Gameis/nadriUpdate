@@ -1,84 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/nadri/repository/css/tripmember/modifyForm.css">
-
+<link rel="stylesheet"
+	href="/nadri/repository/css/tripmember/modifyForm.css">
 </head>
 <body>
-		
-<div class="wrapper">
-
-	<div class="wrap">
-		<form id="modifyForm">
-			<br>
-			<div class="modifysubject">
-				<span>내이미지수정</span>
-			</div>
-			
-			<div>			
-				<div>
-					<label for="memberImgBtn">
-						<img id="memberImgchange"  src="/nadri/repository/img/tripmember/defaultImg.png"  class="myImg" alt="변경이미지"  
-						style="cursor:pointer;">					
-					</label>
-							
+	<div class="wrapper">
+		<div class="wrap">
+			<form id="modifyForm">
+				<div class="modifysubject">
+					<span>내정보수정</span>
 				</div>
-				
-				<div style="display: none;">
-					<input type="file" id="memberImgBtn" class="memberImgchange" name="memberImgchange">	
-				</div>
-			</div>
-					
-		</form>
-	
-		<form id="modifyForm2">
-		
-			<div class="modifysubject">
-				<span>내정보수정</span>
-			</div>
-		
-				<div class="pw_wrap">
-					<div class="pwname">비밀번호 변경</div><div id="pwdDiv"></div>
-					<div class="pwinputbox">
-						<input class="pwinput" type="password"  id="pwd" name="pwd">
+				<div class="imgname">이미지 변경</div>
+				<div style="margin-top: 16px;">
+					<div>
+						<label for="memberImgBtn"> 
+						<img id="memberImgchange" src="/nadri/repository/img/tripmember/defaultImg.png"
+							class="myImg" alt="변경이미지" style="cursor: pointer;">
+						</label>
+					</div>
+					<div style="display: none;">
+						<input type="file" id="memberImgBtn" class="memberImgchange" name="memberImgchange">
 					</div>
 				</div>
-				
+				<div class="pw_wrap">
+					<div class="pwname">비밀번호 변경</div>
+					<div id="pwdDiv"></div>
+					<div class="pwinputbox">
+						<input class="pwinput" type="password" id="pwd" name="pwd">
+					</div>
+				</div>
 				<div class="pwck_wrap">
-					<div class="pwckname">비밀번호 확인</div><div id="repwdDiv"></div>
+					<div class="pwckname">비밀번호 확인</div>
+					<div id="repwdDiv"></div>
 					<div class="pwckinputbox">
 						<input class="pwckinput" type="password" id="repwd" name="repwd">
 					</div>
 				</div>
-				
-				
 				<div class="nick_wrap">
-					<div class="nickname">닉네임변경</div><div id="nickDiv"></div>
+					<div class="nickname">닉네임변경</div>
+					<div id="nickDiv"></div>
 					<div class="nickinputbox">
 						<input class="nickinput" id="nickName" name="nickName">
 					</div>
 				</div>
-					
 				<div class="tel_wrap">
-					<div class="telname">핸드폰번호변경</div><div id="telDiv"></div>
+					<div class="telname">핸드폰번호변경</div>
+					<div id="telDiv"></div>
 					<div class="teltext">
-						<input class="telinput" id="tel" name="tel"  size="15">
+						<input class="telinput" id="tel" name="tel" size="15">
 					</div>
 				</div>
-			
 				<div class="email_wrap">
-					<div class="emailname">이메일변경</div> <div id="emailDiv"></div>
-						<div class="emailtext">
-							<input type="text" name="email" id="email" class="emailinputbox">
-							<div class="emailcheckbutton" id="emailcheckbutton">
-							<span>인증메일전송</span>
+					<div class="emailname">이메일변경</div>
+					<div id="emailDiv"></div>
+					<div class="emailtext">
+						<input type="text" name="email" id="email" class="emailinputbox">
+						<div class="emailcheckbutton" id="emailcheckbutton">
+							<span style="font-size: 20px;">인증메일전송</span>
 						</div>
-						</div>
-									
+					</div>
 					<div class="emailcheck_wrap">
 						<div id="emailcheckDiv"></div>
 						<div class="emailcheckinputbox">
@@ -87,45 +72,41 @@
 						<div class="clearfix"></div>
 					</div>
 				</div>
-						
 				<div class="address_wrap">
-					<div class="addressname">주소변경</div><div id="addressDiv"></div>
+					<div class="addressname">주소변경</div>
+					<div id="addressDiv"></div>
 					<div class="addressinput1_wrap">
 						<div class="addressinput1box">
 							<input class="addressinput1" id="zipcode" name="zipcode" readonly>
 						</div>
-						
 						<div class="addressbutton" id="zipcodeBtn">
-							<span>우편번호검색</span>
+							<span style="font-size: 20px;">우편번호검색</span>
 						</div>
 						<div class="clearfix"></div>
 					</div>
-					
-					<div class ="addressinput2_wrap">
+					<div class="addressinput2_wrap">
 						<div class="addressinput2box">
-							<input class="addressinput2" placeholder="도로주소" id="address" name="address" readonly>
-							
+							<input class="addressinput2" placeholder="도로주소" id="address"
+								name="address" readonly>
 						</div>
 					</div>
-					
-					<div class ="addressinput3_wrap">
+					<div class="addressinput3_wrap">
 						<div class="addressinput3box">
-							<input class="addressinput3" placeholder="상세주소" id="addressDetail" name="addressDetail">
-							
+							<input class="addressinput3" placeholder="상세주소"
+								id="addressDetail" name="addressDetail">
 						</div>
 					</div>
 				</div>
-				
 				<div class="modifybutton_wrap">
 					<input type="button" class="modifyBtn" id="modifyBtn" value="수정하기">
-				</div>		
-		</form>
-		
+				</div>
+			</form>
+		</div>
 	</div>
-</div>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript">
 
 $(function(){
 	$.ajax({
@@ -141,13 +122,11 @@ $(function(){
 			$('#email').val(data.email);
 			$('#zipcode').val(data.zipcode);
 			$('#address').val(data.address);
-			$('#addressDetail').val(data.addressDetail);
-				
+			$('#addressDetail').val(data.addressDetail);			
 		},
 		error:function(err){
 			console.log(err);
 		}
-		
 	});	//ajax		
 });	//function		
 			
@@ -158,9 +137,8 @@ $('#modifyBtn').click(function(){
 	$('#emailDiv').empty();
 	$('#addressDiv').empty();
 	
-	
  	if($('#pwd').val()==''){
-		$('#pwdDiv').html('변경될 비밀번호를 입력해주세요 ');		
+		$('#pwdDiv').html('변경할 비밀번호를 입력해주세요 ');		
 	}else if(($('#repwd').val()=='')||($('#pwd').val() != $('#repwd').val())){
 		$('#repwdDiv').html('비밀번호를 확인해주세요 ');
 	}else if($('#nickName').val()==''){
@@ -190,12 +168,10 @@ $('#modifyBtn').click(function(){
 			}
 		});	//ajax
 	}	//else	
-	
 });	//modifyBtn click 
 
-
 $('.memberImgchange').change(function(){
-//시리얼 라이즈로 멀티파트 즉 그림형태는 못넘기는듯
+//시리얼 라이즈로 멀티파트 즉 그림 형태는 못 넘기는듯
 	var formData = new FormData($('#modifyForm')[0]);
 //	alert("뜨냐");
 	$.ajax({
@@ -213,21 +189,17 @@ $('.memberImgchange').change(function(){
 			//$('#memberImgchange').attr('src','/nadri/repository/img/tripmember/storage/'+data+'?timestamp='+date.getTime());
 			$('#memberImgchange').attr('src','/nadri/repository/img/tripmember/storage/'+data);
 			location.reload();
-	
 		},
 		error:function(err){
 			console.log(err);
 		}
 	});		//ajax
-
 });
-
 
 //우편번호 체크
 $('#zipcodeBtn').click(function(){
 	window.open("/nadri/repository/jsp/tripmember/checkPost.jsp", "checkPost", "width=500 height=500 top=200 left=700");
 });
-
 
 //현재 새로운창이 떠있는상태
 $('#checkPostSearchBtn').click(function(){
@@ -263,7 +235,6 @@ $('#checkPostSearchBtn').click(function(){
 				
 			}))).appendTo($('#zipcodeTable'));												
 		});	//each
-		
 	
 		$('.addressA').click(function(){
 			$('#zipcode', opener.document).val($(this).parent().prev().text());
@@ -271,18 +242,14 @@ $('#checkPostSearchBtn').click(function(){
 			$('#address', opener.document).val($(this).text());
 			window.close();		//창만 닫힐뿐 제어권이 사라진게 아니다
 			$('#addressDetail', opener.document).focus();
-		});		// addressA click
-	
-			
+		});		// addressA click	
 		},	//success
 		
 		error:function(err){
 			console.log(err);
-		}	
-			
+		}		
 	});		//ajax
 });		//checkPostSearchBtn click
-
 
 //이메일 인증번호전송
 var mailcode = "";

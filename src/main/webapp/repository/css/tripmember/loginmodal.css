@@ -14,8 +14,8 @@
 }
 
 .container {
-	margin-left: 164px !important;
-}
+/* 	margin-left: 164px !important;
+ */}
 
 .modal-body::-webkit-scrollbar {
 	display: none !important;

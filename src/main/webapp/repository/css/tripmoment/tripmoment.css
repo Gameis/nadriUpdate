@@ -283,10 +283,11 @@ button, input, optgroup, select, textarea {
 	font-size: 16px;
 	line-height: 24px;
 	-webkit-line-clamp: 15;
-	text-overflow: ellipsis;
+	/* text-overflow: ellipsis; */
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
-	overflow: hidden;
+	overflow: auto;
+	width: 470px;
 }
 
 .svg:not(:root) {

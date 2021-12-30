@@ -1,72 +1,66 @@
 @charset "UTF-8";
 
-#gettripmemberForm{
-	margin-left:10px;	
-	margin-right:15px;
-
+#getTripmemberForm {
+	margin-left: 80px;
+	margin-right: 15px;
 	padding: 5px 5px;
 }
 
-#profileImg{
-	width:200px; 
-	height:200px;
-	
+#profileImg {
+	width: 200px;
+	height: 210px;
 }
 
 /* 화면 전체 렙 */
-.wrapper{
-	width: 1150px;	
+.wrapper {
+	width: 1150px;
 }
 
 /* content 랩 */
-.wrap{
-	width : 1100px;
+.wrap {
+	width: 1100px;
 	margin: auto;
 }
 
-.mysubject{
+.mysubject {
 	width: 90%;
-    height: 40px;
-    background-color: #6DF6EA;
-    margin:5px; 5px;
+	height: 40px;
+	background-color: #4062ea;
+	margin: 5px;
+	margin-top: 20px;
+	margin-left: 0px;
 }
-.mysubject span{
-	margin-left: 5px;
-    font-size: 30px;
-    font-weight: 90;
-    color: white;
+
+.mysubject span {
+	margin-left: 9px;
+	font-size: 26px;
+	font-weight: 90;
+	color: white;
 }
 
 #first {
 	position: relative;
-	top: -160px;	
+	top: -179px;
 }
 
-.span{
-	display:inline-block;
-	width:200px;
-	background:#E2E2E2;
-	font-size:25px;
-	font-style:italic;
-	text-align:center;
-	color:white;
-	padding:10px;
-	padding-left:10px;
-	height:33px;
+.span {
+	display: inline-block;
+	width: 200px;
+	background: #E2E2E2;
+	font-size: 21px;
+	text-align: center;
+	color: white;
+	padding: 7px;
+	padding-left: 10px;
+	height: 39px;
 }
 
-#getTripmemberForm{
-	align:center;
-}
-
-.nameinput,.idinput, 
-.nickinput,.telinput,
-.emailinput,.dateinput,
-.addressinput1,.addressinput2{
-	display:inline-block;
-	border:none;
-	text-align:center;
-	font-size:25px;
-	width:750px;
-		
+.nameinput, .idinput, .nickinput, .telinput, .emailinput, .dateinput,
+	.addressinput1, .addressinput2 {
+	display: inline-block;
+	border: none;
+	text-align: center;
+	font-size: 23px;
+	width: 750px;
+	height: 55px;
 }
