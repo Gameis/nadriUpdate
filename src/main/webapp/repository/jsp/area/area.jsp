@@ -15,7 +15,7 @@
 </head>
 <body>
 	<input type="hidden" id="main_seq" value="${param.main_seq}" />
-	<input type="hidden" id="main_name" value="" />
+	<input type="hidden" id="main_name" value=""/>
 	<input type="hidden" id="memId" value="${memId }" />
 	<div id="areaWrap">
 		<div id="areaHeader">
@@ -79,7 +79,7 @@
 						<span>액티비티</span>
 					</div>
 				</div>
-			</a> <a href="#">
+			</a> <a href="#tripmoment">
 				<div class="module">
 					<i class="bi bi-camera"></i>
 					<div>
@@ -422,6 +422,26 @@
 			</div>
 			<!-- area-weather-Info -->
 		</div>
+		<div id="tripmoment" style="display: hidden;"></div>
+		<br>
+		<div class="tripmomentSlide areaSlideTitle">
+			<h2 style="font-weight: bold;">
+				<span>트립모먼트</span>
+			</h2>
+			<div id="carousel_tripmoment_slide" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner" id="moment_carousel_inner"></div>
+				<button class="carousel-control-prev" type="button"
+					data-bs-target="#carousel_tripmoment_slide" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button"
+					data-bs-target="#carousel_tripmoment_slide" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
 	</div>
 	<!--areaWrap-->
 	<div id="wrap_foot">
@@ -438,6 +458,9 @@
 		crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/nadri/repository/js/area/area.js"></script>
 	<script type="text/javascript">
+	function locationhref(moment_seq) {
+    	location.href="/nadri/tripmoment/tripmomentView?moment_seq=" + moment_seq 
+    }
 	
 	//검색
 	function searchEnterkey() {
@@ -833,6 +856,64 @@
 	            console.log(err);
 	        }
 	    });
+	    
+	    $.ajax({
+			url : '/nadri/tripmoment/onTripmoment',
+			type : 'get',
+			success : function(data) {
+					var count = -1;
+			        var momentCount = 1;	
+
+				$.each(data, function(index, items){
+					if(index % 4 == 0) {
+
+			            if(index == 0) {
+			              $('<div/>', {
+			                class: 'carousel-item active'
+			              }).append($('<div/>', {
+			                class: 'card-group'
+			              })).appendTo($('#moment_carousel_inner'));
+			            }else {
+			              $('<div/>', {
+			                class: 'carousel-item'
+			              }).append($('<div/>', {
+			                class: 'card-group'
+			              })).appendTo($('#moment_carousel_inner'));
+			            }            
+			            count++;
+			          }
+					
+					$('<div>', {
+						class: 'cardstyle card index_card_con',
+						onclick : 'locationhref('+ items.moment_seq + ')'
+					}).append($('<div>', {
+						style: '', 
+						class: 'slide_img'
+					}).append($('<div>', {
+						class: 'img'
+					}).append($('<img>', {
+						src: '/nadri/repository/img/' + items.img_path + '/' + items.img_name,
+						class: 'card-img-top',
+						alt: '트립1'
+					})))).append($('<div>', {
+						class: 'bottom_con'
+					}).append($('<div>', {
+						style: '-webkit-box-orient: vertical', 
+						class: 'bottom_desc',
+						text: items.moment_content
+					})).append($('<div>', {
+						class: 'bottom_user_left'
+					}).append($('<i>', {
+						class: 'bi bi-person-circle'
+					})).append($('<span>', {
+						text: items.nickname
+					})))).appendTo($('#moment_carousel_inner .card-group:eq(' + count + ')'));
+				})//each
+			},
+			error : function(err) {
+				
+			}
+		});
 	}
 </script>
 </body>
