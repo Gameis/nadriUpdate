@@ -13,15 +13,18 @@
 	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<link rel="stylesheet" href="/nadri/repository/css/tripmoment/tripmoment.css">
+<link rel="stylesheet"
+	href="/nadri/repository/css/tripmoment/tripmoment.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" media="all">
 <link rel="stylesheet" type="text/css"
 	href="/nadri/repository/css/main/main_top.css">
-<link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/loginmodal.css">
+<link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon"
+	type="image/x-icon">
+<link rel="stylesheet" type="text/css"
+	href="/nadri/repository/css/tripmember/loginmodal.css">
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -68,7 +71,7 @@
 							</div>
 						</c:if>
 
-						<c:if test="${memId != null }">
+						<c:if test="${memId != null}">
 							<div>
 								<p>
 									<a href="/nadri/tripmember/myPage">${sessionScope.memName}님
@@ -174,13 +177,11 @@
 					</form>
 				</div>
 
-
 				아직 회원가입을 하지 않으셨나요?
 				<div class="modal-footer">
 					<button id="tripmemberBtn" class="btn btn-primary"
 						data-bs-target="#agreementmodal" data-bs-toggle="modal">회원가입하기</button>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -257,7 +258,6 @@
 	<div class="travel_guide_root_class">
 		<div class="TravelDetailContainer">
 			<div id="tripmoment">
-
 				<div class="devider-t"></div>
 
 				<!-- 경로 및 검색창 -->
@@ -334,7 +334,6 @@
 													<!-- row-cols-4 -->
 												</div>
 												<!-- container -->
-
 											</div>
 											<!-- image-gallery-slide-wrapper bottom -->
 
@@ -366,12 +365,9 @@
 							<div class="scroll_content">
 								<div class="article_title"></div>
 								<div class="article_content"
-									style="position: relative; overflow: hidden;">
-									<div style="white-space: pre-line;" class="content_collapse"></div>
-
-									<div
-										style="background-color: rgb(245, 247, 250); width: 30px; height: 30px; position: absolute; bottom: 0px; right: 0px;">
-									</div>
+									style="position: relative; white-space: pre-line;">
+									<div class="content_collapse"></div>
+									<div style="background-color: rgb(245, 247, 250); width: 30px; height: 30px; position: absolute; bottom: 0px; right: 0px;"></div>
 								</div>
 								<div class="time"></div>
 								<div style="background-color: #dadfe6; height: 1px"></div>
@@ -385,8 +381,9 @@
 							<div class="like input_view">
 								<div class="like input_phaise_container">
 									<div class="like">
-										<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-											fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+										<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37"
+											fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"
+											style="border-radius: 0 !important; margin-bottom: 0px !important; margin-left: 7px !important;">
 										  <path
 												d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
 										</svg>
@@ -419,15 +416,14 @@
 			</jsp:include>
 		</footer>
 	</div>
+
+	<!-- 	<script type="text/javascript"
+		src="/nadri/repository/js/tripmoment/tripmoment.js"></script> -->
 	<script type="text/javascript"
 		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript"
-		src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
 	<script src="/nadri/repository/js/modal/modal.js"></script>
+
 	<script type="text/javascript">
-
-
-
 $('.btn-close').click(function(){
 	location.href='/nadri/index.jsp';	
 });
@@ -490,10 +486,8 @@ $('#logoutBtn').click(function(){
 			
 		error: function(err){
 			console.log(err);			
-		}	
-			
+		}			
 	});	// ajax
-
 });		//logOutBtn click			
 
 </script>
@@ -568,16 +562,50 @@ function searchEnterkey() {
 			url : '/nadri/tripmoment/getTripView',
 			type : 'get',
 			data : 'moment_seq=' + $('#moment_seq').val(),
-			success : function(data){
+			success : function(data){		
 				
 				$('.nickname').text(data.nickname);
 				$('.article_title').text(data.moment_title);
-				$('.article_content').text(data.moment_content);
+				$('.content_collapse').text(data.moment_content);
+				
+			    $('.article_content').each(function(){
+			    	
+			        var content = $(this).children('.content_collapse');
+			        var content_txt = content.text();
+			        var content_txt_short = content_txt.substring(0,200)+"...";
+			        var btn_more = $('<a href="javascript:void(0)" id="arrow" class="bi-arrow-down"></a>');
+			        
+			        $(this).append(btn_more);
+			        
+			        if(content_txt.length >= 200){
+			            content.html(content_txt_short)
+			        }else{
+			            btn_more.hide()
+			        }
+			        
+			        btn_more.click(toggle_content);
+
+			        function toggle_content(){
+			            if($(this).hasClass('short')){
+			                content.html(content_txt_short)
+			                $('#arrow').removeClass('bi-arrow-up');
+			                $('#arrow').addClass('bi-arrow-down');
+			                $(this).removeClass('short');
+			            }else{
+			                content.html(content_txt);
+			                $('#arrow').removeClass('bi-arrow-down');
+			                $('#arrow').addClass('bi-arrow-up');
+			                $(this).addClass('short');
+			            }
+			        }
+			    });		
 				/* $('.time'). */
 			},
 			
 			error : function(err) {
 			}
+			
+
 		});
 		
 		$.ajax({
@@ -605,7 +633,7 @@ function searchEnterkey() {
 				}).append($('<div>', {
 					class : 'img-tripmoment'
 				}).append($('<a>', {
-					href : "",
+					href : "/nadri/tripmoment/tripmomentView?moment_seq=" +items.moment_seq,
 					title : '서울, 추천 트립 모먼트'
 				}).append($('<img>', {
 					class : 'img',
