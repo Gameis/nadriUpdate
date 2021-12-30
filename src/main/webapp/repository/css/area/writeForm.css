@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+#popWriteDiv {
+	display: grid;
+	grid-template-columns: 200px 280px;
+	grid-template-rows: repeat(10, 1fr);
+	align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 500px;
+}
+
+#popWriteDiv input, #popWiretDiv textArea {
+	border-bottom: 1px solid;
+	border-color: #80808078;
+}
+
+#hotelWriteDiv {
+	display: grid;
+	grid-template-columns: 200px 280px;
+	grid-template-rows: repeat(11, 1fr);
+	align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 500px;
+}
+	
+#hotelWriteDiv input, #hotelWriteDiv textArea {
+	border-bottom: 1px solid;
+	border-color: #80808078;
+}
+
+#activityWriteDiv {
+	display: grid;
+	grid-template-columns: 200px 280px;
+	grid-template-rows: repeat(11, 1fr);
+	align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 500px;
+}
+	
+#activityWriteDiv input, #activityWriteDiv textArea {
+	border-bottom: 1px solid;
+	border-color: #80808078;
+}
+
+#activity_option label { margin: 0 20px; }
+#activity_option label input { margin: 10px; }
+
