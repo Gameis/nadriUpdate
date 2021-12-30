@@ -77,9 +77,11 @@
 							</div> --%>
 							<div class="btn-group" style="margin-right: 8px;">
 								<button class="btn btn-secondary btn-sm dropdown-toggle"
-									type="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">${sessionScope.memName}님</button>
+									type="button" data-bs-toggle="dropdown" aria-expanded="false"
+									style="font-size: 18px;">${sessionScope.memName}님</button>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="/nadri/tripmember/myPage">마이페이지</a></li>
+									<li><a class="dropdown-item"
+										href="/nadri/tripmember/myPage">마이페이지</a></li>
 									<li><hr class="dropdown-divider"></li>
 									<li><a class="dropdown-item" href="#" id="logoutBtn">로그아웃</a></li>
 								</ul>
@@ -154,16 +156,16 @@
 
 						<div class="form-floating">
 							<input type="text" class="form-control" id="floatingInput"
-								name="floatingInput" onkeyup="loginEnterkey()" placeholder="Identification"> <label
-								for="floatingInput">Identification</label>
+								name="floatingInput" onkeyup="loginEnterkey()"
+								placeholder="Identification"> <label for="floatingInput">Identification</label>
 							<div id="modalidDiv"></div>
 						</div>
 
 
 						<div class="form-floating">
 							<input type="password" class="form-control" id="floatingPassword"
-								name="floatingPassword" onkeyup="loginEnterkey()" placeholder="Password"> <label
-								for="floatingPassword">Password</label>
+								name="floatingPassword" onkeyup="loginEnterkey()"
+								placeholder="Password"> <label for="floatingPassword">Password</label>
 							<div id="modalpwdDiv"></div>
 						</div>
 
@@ -181,13 +183,11 @@
 						<div id="loginResult"></div>
 					</form>
 				</div>
-
-				아직 회원가입을 하지 않으셨나요?
 				<div class="modal-footer">
+					<span style="margin-right: 84px;">아직 회원가입을 하지 않으셨나요?</span>
 					<button class="btn btn-primary" data-bs-target="#membershipmodal"
 						data-bs-toggle="modal">회원가입하기</button>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -219,60 +219,62 @@
 										placeholder="이름을 입력해 주세요">
 								</div>
 								<div class="form-group">
-									<label for="inputName">닉네임</label> <input type="text"
+									<label for="inputName" style="margin-top: 10px;">닉네임</label> <input type="text"
 										class="form-control" name="nickName" id="nickName"
 										placeholder="닉네임을 입력해 주세요">
 								</div>
 								<div class="form-group">
-									<label for="InputId">아이디</label> <input type="text"
+									<label for="InputId" style="margin-top: 10px;">아이디</label> <input type="text"
 										class="form-control" name="id" id="inputId"
 										placeholder="아이디를 입력해주세요">
 								</div>
 								<div class="form-group">
-									<label for="InputEmail">이메일 주소</label> <input type="email"
-										class="form-control" name="email" id="InputEmail"
-										placeholder="이메일 주소를 입력해주세요"> <label
-										class="btn btn-primary" id="emailCheckBtn">인증번호</label>
+									<label for="InputEmail" style="display: block; margin-top: 10px;">이메일 주소</label>
+									<input type="email" class="form-control" name="email"
+										id="InputEmail" placeholder="이메일 주소를 입력해주세요"
+										style="width: 60% !important; display: inline-block; ">
+									<label class="btn btn-primary" id="emailCheckBtn"
+										style="display: inline-block !important; margin-top: 3px !important; margin-bottom: 5px !important;">인증번호</label>
 								</div>
 								<div class="form-group">
 									<input type="text" class="form-control" id="checkEmail"
 										placeholder="인증번호">
 								</div>
 								<div class="form-group">
-									<label for="inputPassword">비밀번호</label> <input type="password"
+									<label for="inputPassword" style="margin-top: 10px;">비밀번호</label> <input type="password"
 										class="form-control" name="pwd" id="inputPassword"
 										placeholder="비밀번호를 입력해주세요">
 								</div>
 								<div class="form-group">
-									<label for="inputPasswordCheck">비밀번호 확인</label> <input
+									<label for="inputPasswordCheck" style="margin-top: 10px;">비밀번호 확인</label> <input
 										type="password" class="form-control" id="inputPasswordCheck"
 										placeholder="비밀번호 확인을 위해 다시한번 입력 해 주세요">
 								</div>
 								<div class="form-group">
-									<label for="inputMobile">휴대폰 번호</label> <input type="tel"
+									<label for="inputMobile" style="margin-top: 10px;">휴대폰 번호</label> <input type="tel"
 										class="form-control" name="tel" id="inputMobile"
 										placeholder="휴대폰번호를 입력해 주세요">
 								</div>
 								<div class="form-group">
-									<label for="zipcode" style="display: block">우편번호</label> <input
+									<label for="zipcode" style="display: block; margin-top: 10px;">우편번호</label> <input
 										type="text" class="form-control" name="zipcode" id="zipcode"
 										value="" readonly style="width: 150px; display: inline-block;">
 									<label id="zipcodeBtn" class="btn btn-primary">우편번호</label>
 								</div>
 
 								<div class="form-group">
-									<label id="address">주소</label> <input type="text" id="address"
-										placeholder="주소" name="address" class="form-control" value=" "
+									<label for="address" style="margin-top: 10px;">주소</label> <input type="text" id="address"
+										placeholder="주소" name="address" class="form-control" value=""
 										readonly>
 								</div>
 
 								<div class="form-group">
-									<label id="addressDetail">상세주소</label> <input type="text"
+									<label for="addressDetail" style="margin-top: 10px;">상세주소</label> <input type="text"
 										id="addressDetail" placeholder="상세주소" name="addressDetail"
-										class="form-control" value=" ">
+										class="form-control" value="">
 								</div>
 
-								<div class="form-group">
+								<div class="form-group" style="margin-top: 10px;">
 									<label>약관 동의</label>
 									<div data-toggle="buttons">
 										<label class="btn btn-primary active"> <span
@@ -282,26 +284,21 @@
 									</div>
 								</div>
 
-								<div class="form-group text-center">
-									<button type="submit" id="join-submit" class="btn btn-primary">
+								<div class="form-group text-center" style="margin-top: 10px;">
+									<button type="submit" id="join-submit" class="btn btn-primary" style="display: inline-block !important;">
 										회원가입<i class="fa fa-check spaceLeft"></i>
 									</button>
-									<button type="submit" class="btn btn-warning">
-										가입취소<i class="fa fa-times spaceLeft"></i>
-									</button>
+									<div class="login" style="display: inline-block !important;">
+										<button class="btn btn-primary" data-bs-target="#loginmodal"
+											data-bs-toggle="modal" >로그인</button>
+									</div>
 								</div>
 
 								<input type="hidden" class="imginput" id="profileImg"
 									name="profileImg" value="defaultImg.png">
-
 							</form>
 						</div>
 					</article>
-				</div>
-
-				<div class="login">
-					<button class="btn btn-primary" data-bs-target="#loginmodal"
-						data-bs-toggle="modal">로그인</button>
 				</div>
 			</div>
 		</div>
@@ -599,18 +596,13 @@ $('#modalLoginBtn').click(function(){
 					$('#loginResult').css('font-size', '15pt');
 					$('#loginResult').css('font-weight', 'bold');
 				}	
-				
 			},		//success
-			
 			error: function(err){
 				console.log(err);
-				
 			}
-			
 		});		//ajax
 	} 		//else			
 });		//click	
-
 
 //로그아웃				
 $('#logoutBtn').click(function(){
@@ -750,11 +742,7 @@ List = [
          //disabled: true, //자동완성 기능 끄기
       });
    });
-   
-
-   
 </script>
-
 
 <script type="text/javascript">
 //검색

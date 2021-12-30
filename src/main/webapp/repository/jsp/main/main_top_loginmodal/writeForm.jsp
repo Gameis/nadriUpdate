@@ -49,9 +49,6 @@
 					<input class="nickinput" id="nickName" name="nickName">
 				</div>
 			</div>
-	
-			
-	
 		
 			<div class="profile_wrap">
 				<div class="imgname"></div>
@@ -59,10 +56,7 @@
 					<input type="hidden" class="imginput" id="profileImg" name="profileImg" value="defaultImg.png">
 				</div>
 			</div>
-	
-
-
-				
+			
 			<div class="tel_wrap">
 				<div class="telname">핸드폰</div><div id="telDiv"></div>
 				<div class="teltext">
@@ -78,7 +72,6 @@
 				</div>
 			</div>
 	
-	
 			<div class="email_wrap">
 				<div class="emailname">이메일</div> <div id="emailDiv"></div>
 					<div class="emailtext">
@@ -92,9 +85,8 @@
 						</datalist>
 						<div class="emailcheckbutton" id="emailcheckbutton">
 							<span>인증메일전송</span>
-					</div>
-					</div>
-					
+						</div>
+					</div>				
 				
 				<div class="emailcheck_wrap">
 					<div id="emailcheckDiv"></div>
@@ -136,11 +128,9 @@
 			<div class="memberbutton_wrap">
 				<input type="button" class="memberbutton" id="writeBtn" value="가입하기">
 			</div>
-			
 		</div>
 	</form>
 </div>
-
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">

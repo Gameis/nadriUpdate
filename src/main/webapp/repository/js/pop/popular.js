@@ -664,13 +664,7 @@ function getLocation(){
 					}).append($('<i>', {
 						class: 'bi bi-person-circle'
 					})).append($('<span>', {
-						text: '개복치'
-					}))).append($('<div>', {
-						class: 'bottom_user_right'
-					}).append($('<img>', {
-						src: "/nadri/repository/img/main/thumb.png"
-					})).append($('<span>', {
-						text : '34'
+						text: items.nickname
 					})))).appendTo($('#moment_carousel_inner .card-group:eq(' + count + ')'));
 				})//each
 				

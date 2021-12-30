@@ -110,14 +110,12 @@ $('#checkPostSearchBtn').click(function(){
 			window.close();		//창만 닫힐뿐 제어권이 사라진게 아니다
 			$('#addressDetail', opener.document).focus();
 		});		// addressA click
-	
 			
 		},	//success
 		
 		error:function(err){
 			console.log(err);
 		}	
-			
 	});		//ajax
 });		//checkPostSearchBtn click
 
