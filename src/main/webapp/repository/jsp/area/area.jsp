@@ -101,7 +101,7 @@
 		<div class="areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>지역 이름 인기명소</span>
-				<button class="btn btn-primary addButton" id="addPopBtn" data-bs-toggle="modal" data-bs-target="#popWriteForm">+</button>
+				<button class="btn btn-primary addButton" id="addPopBtn" data-bs-toggle="modal" data-bs-target="#popWriteModal">+</button>
 			</h2>
 			<!--divSlide-->
 			<div class="areaSlide" style="background: rgba(40, 125, 250, .1);">
@@ -125,7 +125,7 @@
 			<!--areaSlide-->
 		</div>
 		<!--areaSlideTitle-->
-		<div class="modal fade" id="popWriteForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="popWriteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 		      <div class="modal-header">
@@ -180,7 +180,7 @@
 		<div class="areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>인기 호텔</span>
-				<button class="btn btn-primary addButton" id="addHotelBtn" data-bs-toggle="modal" data-bs-target="#hotelWriteForm">+</button>
+				<button class="btn btn-primary addButton" id="addHotelBtn" data-bs-toggle="modal" data-bs-target="#hotelWriteModal">+</button>
 			</h2>
 			<!--divSlide-->
 			<div class="areaSlide">
@@ -201,7 +201,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal fade" id="hotelWriteForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="hotelWriteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 		      <div class="modal-header">
@@ -251,7 +251,7 @@
 		<div class="areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>액티비티</span>
-				<button class="btn btn-primary addButton" id="addActivityBtn" data-bs-toggle="modal" data-bs-target="#activityWriteForm">+</button>
+				<button class="btn btn-primary addButton" id="addActivityBtn" data-bs-toggle="modal" data-bs-target="#activityWriteModal">+</button>
 			</h2>
 			<!--divSlide-->
 			<div class="areaSlide">
@@ -273,7 +273,7 @@
 				<!--areaHotel_slide-->
 			</div>
 		</div>
-		<div class="modal fade" id="activityWriteForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="activityWriteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 		      <div class="modal-header">
@@ -424,22 +424,25 @@
 		</div>
 		<div id="tripmoment" style="display: hidden;"></div>
 		<br>
+		
 		<div class="tripmomentSlide areaSlideTitle">
 			<h2 style="font-weight: bold;">
 				<span>트립모먼트</span>
 			</h2>
-			<div id="carousel_tripmoment_slide" class="carousel slide" data-bs-ride="carousel">
-				<div class="carousel-inner" id="moment_carousel_inner"></div>
-				<button class="carousel-control-prev" type="button"
-					data-bs-target="#carousel_tripmoment_slide" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button"
-					data-bs-target="#carousel_tripmoment_slide" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
+			<div class="areaSlide">
+				<div id="carousel_tripmoment_slide" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner" id="moment_carousel_inner"></div>
+					<button class="carousel-control-prev" type="button"
+						data-bs-target="#carousel_tripmoment_slide" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button"
+						data-bs-target="#carousel_tripmoment_slide" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -885,6 +888,7 @@
 					
 					$('<div>', {
 						class: 'cardstyle card index_card_con',
+						style: 'cursor: pointer;',
 						onclick : 'locationhref('+ items.moment_seq + ')'
 					}).append($('<div>', {
 						style: '', 

@@ -242,6 +242,7 @@ h2 span {
 
 .slide_img {
 	overflow: hidden;
+	height: 200px;
 }
 
 .card img {
@@ -545,11 +546,10 @@ h2 span {
 	overflow: hidden;
 }
 
-.index_card_con .bottom_user_con {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
+
+
+.index_card_con .bottom_con {
+	padding: 16px 16px 13px;
+	border: 1px solid #dadfe6;
+	border-top: none;
 }

@@ -9,6 +9,7 @@ $(function() {
             contentType: false,
             data: formData,
             success: function() {
+            	alert('성공');
             },
             error: function(err) {
                 console.log(err);
