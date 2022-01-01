@@ -24,7 +24,7 @@
 	</insert>
 	
 	<select id="printPopMain" parameterType="String" resultType="popMain">
-		select pop_seq, pop_name, pop_businesstime, pop_tourismtime, pop_call, "pop_review_score", "pop_review_count", main_seq, img_name, img_path
+		select pop_seq, pop_name, pop_businesstime, pop_tourismtime, pop_call, nvl("pop_review_score", 0) as "pop_review_score", nvl("pop_review_count", 0) as "pop_review_count", main_seq, img_name, img_path
 		from trippop
         left join (select pop_seq, trunc(avg(pop_review_score), 1) as "pop_review_score"
 		      from trippop_review
@@ -36,6 +36,7 @@
 		      from trippop_review
 		      group by pop_seq) using(pop_seq)
 		where main_seq = #{main_seq}
+		order by "pop_review_score" desc
 	</select>
 	
 	<insert id="activityWrite" parameterType="tripActivity">

@@ -780,7 +780,7 @@
     
     
   }); 
-	
+
 
 	function weather(x, y) {
 		function numberPad(n, width) {
@@ -789,7 +789,7 @@
 	    }
 
 	    var today = new Date();
-	    today = "" + today.getFullYear() + (today.getMonth() + 1) + numberPad(today.getDate(), 2);
+	    today = "" + today.getFullYear() + numberPad((today.getMonth() + 1), 2) + numberPad(today.getDate(), 2);
 	    
 	    var serviceKey = 'es31tYgHZ%2BTkuWpOLXBsbxse3oMSoHkjqzhMd0SpKZ4EHParX3%2B0uQq2qhvJMizTi84Ifj1PWHXfIOSLtRhzaA%3D%3D';
 	    var dataType = 'JSON';
@@ -799,7 +799,7 @@
 	    var base_time = '0200';
 	    var nx = x;
 	    var ny = y;
-		
+
 	    $.ajax({
 	        url: 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'
 	                + '?serviceKey=' + serviceKey
@@ -813,6 +813,7 @@
 	        type: 'GET',
 	        async: 'false',
 	        success: function(data) {
+	        	
 	            var temp = new Date();
 	    		$('.weather:eq(0) .weather-day').text(temp.getFullYear() + "년 " + (temp.getMonth() + 1) + "월 " + numberPad(temp.getDate(), 2) + "일");
 	    		$('.weather:eq(1) .weather-day').text(temp.getFullYear() + "년 " + (temp.getMonth() + 1) + "월 " + numberPad(temp.getDate() + 1, 2) + "일");
