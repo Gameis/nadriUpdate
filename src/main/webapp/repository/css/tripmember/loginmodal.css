@@ -3,10 +3,9 @@
 /* .kakaoPNG {
 	background-position: 0 -48px !important;
 } */
+
 .modal-content {
-	/* 	width: 800px !important;
- */
-	
+	margin: auto !important;
 }
 
 .btn-secondary {
@@ -150,94 +149,13 @@ keyframes lookaway-down { 0% {
 	transform: rotate3d(-.2, 0, -.01, 20deg);
 }
 
-100
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%
-{
+100% {
 transform
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 rotate3d
 
-
-
-
-
-
-
-
-
-
-
-
 (
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -
-
-
-
-
-
-
-
-
-
-
-
-
 .2
 ,
 -

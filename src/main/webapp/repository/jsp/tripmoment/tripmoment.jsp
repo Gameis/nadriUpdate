@@ -57,7 +57,7 @@
 			<div class="main_hd_inner main_hd_newline">
 				<div class="main_hd_flex">
 					<div class="trip_main_hd_logo">
-						<a class="trip" href="#">trip.com</a>
+						<a class="trip" href="/nadri/index.jsp">trip.com</a>
 					</div>
 
 					<div class="main_hd_account main_hd_dropdown trip_main_hd_no_login">
@@ -419,11 +419,9 @@
 
 	<!-- 	<script type="text/javascript"
 		src="/nadri/repository/js/tripmoment/tripmoment.js"></script> -->
-	<script type="text/javascript"
-		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="/nadri/repository/js/modal/modal.js"></script>
-
-	<script type="text/javascript">
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/nadri/repository/js/modal/modal.js"></script>
+<script type="text/javascript">
 $('.btn-close').click(function(){
 	location.href='/nadri/index.jsp';	
 });
@@ -491,7 +489,7 @@ $('#logoutBtn').click(function(){
 });		//logOutBtn click			
 
 </script>
-	<script type="text/javascript">
+<script type="text/javascript">
 	
 //검색
 function searchEnterkey() {
@@ -514,8 +512,7 @@ function searchEnterkey() {
     }
 }
 </script>
-
-	<script type="text/javascript">
+<script type="text/javascript">
 	$(function() {
 		$.ajax({
 			url : '/nadri/tripmoment/getTripImg',
@@ -600,12 +597,9 @@ function searchEnterkey() {
 			        }
 			    });		
 				/* $('.time'). */
-			},
-			
+			},		
 			error : function(err) {
 			}
-			
-
 		});
 		
 		$.ajax({
